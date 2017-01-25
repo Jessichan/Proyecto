@@ -3,7 +3,7 @@ create database if not exists `animalshop`;
 use `animalshop`;
 
 CREATE USER IF NOT EXISTS 'mascota'@'localhost' IDENTIFIED BY 'minino';
-GRANT ALL PRIVILEGES ON animalshop* TO 'mascota'@'localhost';
+GRANT ALL PRIVILEGES ON animalshop TO 'mascota'@'localhost';
 FLUSH PRIVILEGES;
 
 
@@ -88,14 +88,14 @@ insert into alquiler values(null, 2, now());
 insert into alquiler values(null, 4, now());
 insert into alquiler values(null, 6, now());
 
-insert into animal values(null, 'perro', 'Peludo', 'Golden Retriever', '3 meses', 'Perro cariñoso y jugueton', 18.00);
-insert into animal values(null, 'gato', 'doraemon', 'Bengala', '4 meses', 'Gato jugueton y gracioso', 20.00);
-insert into animal values(null, 'pajaro', 'Manuel', 'Canario', '6 meses', 'ya sabe volar' 15.00);
-insert into animal values(null, 'loro', 'Tina', 'Psittacus erithacus', '2 meses', 'Tararea el himno de España', 23.00);
-insert into animal values(null, 'perro', 'Giva', 'Dalmata', '1 año'  'muy mansito', 17.00);
-insert into animal values(null, 'conejo', 'Sabana', 'Belier Gold', 'año y medio', 'Se deja mimar que da gusto', 14.00);
-insert into animal values(null, 'hamster', 'Currito', 'Hanster Comun', '1 año' , 'Se esta preparando para la carrera nocturna', 12.50);
-insert into animal values(null, 'gato', 'Mini', 'Bombai', '1 año', 'Gato cariñoso y goloso', 18.00);
+insert into animal values(null, 'perro', 'peludo', 'golden retriever', '3 meses', 'Perro cariñoso y jugueton', 18.00);
+insert into animal values(null, 'gato', 'doraemon', 'bengala', '4 meses', 'Gato jugueton y gracioso', 20.00);
+insert into animal values(null, 'pajaro', 'manuel', 'canario', '6 meses', 'ya sabe volar', 15.00);
+insert into animal values(null, 'loro', 'tina', 'Psittacus erithacus', '2 meses', 'Tararea el himno de España', 23.00);
+insert into animal values(null, 'perro', 'giva', 'dalmata', '1 año',  'muy mansito', 17.00);
+insert into animal values(null, 'conejo', 'sabana', 'belier Gold', 'año y medio', 'Se deja mimar que da gusto', 14.00);
+insert into animal values(null, 'hamster', 'currito', 'Hanster Comun', '1 año' , 'se esta preparando para la carrera nocturna', 12.50);
+insert into animal values(null, 'gato', 'mini', 'bombai', '1 año', 'gato cariñoso y goloso', 18.00);
 
 insert into tiene values(3, 4, 1);
 insert into tiene values(2, 2, 1);
