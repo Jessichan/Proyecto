@@ -29,6 +29,12 @@ input[type=text], input[type=password]{
 	 margin-left: -15px;
 	postion:absolute;
 }
+input[type=tel], input[type=email]{
+	 margin-left: -15px;
+	postion:absolute;
+}
 input[type=submit] {
 	margin-top: 20px;
+	background-color: #E94330;
+	border-color: firebrick;
 }

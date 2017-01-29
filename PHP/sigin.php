@@ -3,27 +3,26 @@
 <head>
     <meta charset="utf-8">
     <title>Sigin</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/sigin.css">
 </head>
 <body>
 
     <?php
         include_once "conec.php";
-
         if (isset($_POST["nombre"])) {
+            $nom   = $_POST['nombre'];
+            $ape   = $_POST['ape'];
+            $tele  = $_POST['tfono'];
+            $email = $_POST['email'];
+            $user   = $_POST['user'];
+            $tipo  = 'User';
+            $pass   = sha1 ($_POST['pass']);
 
-            $sigin = "INSERT INTO cliente (nombre, apellidos, telefono, email, usuario, tipo, password)
-                        values (nombre = '{$_POST['nombre']}', apellidos = '{$_POST['ape']}', telefono = '{$_POST['tfono']}',
-                        email = '{$_POST['email']}', usuario = '{$_POST['user']}', tipo = '{$_POST['tipo']}', password = '{$_POST['pass']}';)";
+            $sigin = "INSERT INTO cliente VALUES (NULL, '$nom', '$ape', '$tele', '$email', '$user', '$tipo', '$pass');";
 
             if ($result = $connection->query($sigin)) {
-
-                if ($result->num_rows > 0) {
-                    header('Location: menu.php');
-                } else{
-                    // echo "Invalid Login";
-                }
-            }else
+                header("location: /php/proyecto/login.php");
+            } else
                 echo "Wrong Query";
         }
     ?>
@@ -33,29 +32,29 @@
         <form method="post">
             <div>
                 <label>Nombre</label>
-                <input name="nombre" type="text" required>
+                <input name="nombre" type="text" maxlength="25" required>
             </div>
             <div>
                 <label>Apellidos</label>
-                <input name="ape" type="text" required>
+                <input name="ape" type="text" maxlength="50" required>
             </div>
             <div>
                 <label>Telefono</label>
-                <input name="tfono" type="text" required>
+                <input name="tfono" type="tel" pattern="[0-9]{9}" required>
             </div>
             <div>
                 <label>Email</label>
-                <input name="email" type="text" required>
+                <input name="email" type="email" maxlength="100" required>
             </div>
             <div>
                 <label>Usuario</label>
-                <input name="user" type="text" required>
+                <input name="user" type="text" maxlength="15" required>
             </div>
             <div>
                 <label>Password</label>
-                <input name="pass" type="password" required>
+                <input name="pass" type="password" maxlength="16" required>
             </div>
-            <input type="submit" value="Sig In"><a href="menu.php"></a>
+            <input type="submit" value="Sign Up">
         </form>
     </div>
 

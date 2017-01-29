@@ -12,39 +12,52 @@
 
         if (isset($_POST["user"])) {
 
-            $login = "SELECT * FROM cliente
-                      WHERE username = '{$_POST['user']}' AND
-                            password = '{$_POST['pass']}';
+            $user  = $_POST['user'];
+            $pass = $_POST['pass'];
+
+            $login = "SELECT idcliente FROM cliente
+                      WHERE usuario = ? AND
+                            password = ?;
                      ";
+            if ($query = $connection->prepare($login)) {
 
-            if ($result = $connection->query($login)) {
+                $query->bind_param("ss", $user, $pass);
+                $query->execute();
+                $query->bind_result($alguien);
+                $query->fetch();
 
-                if ($result->num_rows > 0) {
-                    header('Location: menu.php');
-                } else{
-                    // echo "Invalid Login";
-                }
-            }else
-                echo "Wrong Query";
+                echo $alguien;
+                if(!empty($alguien)){
+                    echo "Entra";
+                    session_start();
+                    $_SESSION["iduser"] = $alguien;
+                    header("Location: /php/proyecto/menu.php");
+                } else
+                     echo "Invalid Login";
+
+                $query->close();
+            }
         }
+
     ?>
 
-    <center><img id="logo" src="/php/proyecto/img/logo.png"></center>
+    <div id="caja">
+        <img id="logo" src="/php/proyecto/img/logo.png">
         <form class='login' method="post">
-        <div><center>
+        <div>
             <label>Username</label>
             <input name="user" type="text" required>
-        </div></center>
-        <div><center>
+        </div>
+        <div>
             <label>Password</label>
             <input name="pass" type="password" required>
-        </div></center>
+        </div>
         <div><center>
-            <input type="submit" value="Log In">
-        </div></center>
-        <div><center>No tienes cuenta? <a href="sign_up.php">Sign Up</a></div></center>
+            <input type="submit" value="Log In"></center>
+        </div><center>
+        <div>¿No tienes cuenta? <a href="/php/proyecto/sigin.php">Sign Up</a></div></center>
     </form>
-
+    </div>
 </body>
 </html>
 
