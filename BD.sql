@@ -38,7 +38,7 @@ create table animal
     raza  			varchar(50),
     edad			varchar(10),
     descripcion		varchar(500),
-    precio      	decimal(3,2),
+    precio      	varchar(7),
     imagen			varchar(500),
     primary key(idanimal)
  );
@@ -60,7 +60,7 @@ create table accesorio
 	nombre			varchar(50),
 	descripcion		varchar(50),
 	cantidad		int,
-	precio			decimal(3,2),
+	precio			decimal(4,2),
 	imagen			varchar(500),
 	primary key(idaccesorio)
 	);
@@ -98,6 +98,7 @@ insert into animal values(null, 'perro', 'giva', 'dalmata', '1 año',  'muy mans
 insert into animal values(null, 'conejo', 'sabana', 'belier Gold', 'año y medio', 'Se deja mimar que da gusto', 14.00, 'http://image.com');
 insert into animal values(null, 'hamster', 'currito', 'Hanster Comun', '1 año' , 'se esta preparando para la carrera nocturna', 12.50, 'http://image.com');
 insert into animal values(null, 'gato', 'mini', 'bombai', '1 año', 'gato cariñoso y goloso', 18.00, 'http://image.com');
+insert into animal values(null, 'coballa', 'kitty', 'peruana', '1 año', 'muy mona', 15.00, 'http://image.com');
 
 insert into tiene values(3, 4, 1);
 insert into tiene values(2, 2, 1);
