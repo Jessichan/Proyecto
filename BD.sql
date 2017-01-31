@@ -39,6 +39,7 @@ create table animal
     edad			varchar(10),
     descripcion		varchar(500),
     precio      	decimal(3,2),
+    imagen			varchar(500),
     primary key(idanimal)
  );
 
@@ -60,6 +61,7 @@ create table accesorio
 	descripcion		varchar(50),
 	cantidad		int,
 	precio			decimal(3,2),
+	imagen			varchar(500),
 	primary key(idaccesorio)
 	);
 
@@ -88,14 +90,14 @@ insert into alquiler values(null, 2, now());
 insert into alquiler values(null, 4, now());
 insert into alquiler values(null, 6, now());
 
-insert into animal values(null, 'perro', 'peludo', 'golden retriever', '3 meses', 'Perro cariñoso y jugueton', 18.00);
-insert into animal values(null, 'gato', 'doraemon', 'bengala', '4 meses', 'Gato jugueton y gracioso', 20.00);
-insert into animal values(null, 'pajaro', 'manuel', 'canario', '6 meses', 'ya sabe volar', 15.00);
-insert into animal values(null, 'loro', 'tina', 'Psittacus erithacus', '2 meses', 'Tararea el himno de España', 23.00);
-insert into animal values(null, 'perro', 'giva', 'dalmata', '1 año',  'muy mansito', 17.00);
-insert into animal values(null, 'conejo', 'sabana', 'belier Gold', 'año y medio', 'Se deja mimar que da gusto', 14.00);
-insert into animal values(null, 'hamster', 'currito', 'Hanster Comun', '1 año' , 'se esta preparando para la carrera nocturna', 12.50);
-insert into animal values(null, 'gato', 'mini', 'bombai', '1 año', 'gato cariñoso y goloso', 18.00);
+insert into animal values(null, 'perro', 'peludo', 'golden retriever', '3 meses', 'Perro cariñoso y jugueton', 18.00, 'http://image.com');
+insert into animal values(null, 'gato', 'doraemon', 'bengala', '4 meses', 'Gato jugueton y gracioso', 20.00, 'http://image.com');
+insert into animal values(null, 'pajaro', 'manuel', 'canario', '6 meses', 'ya sabe volar', 15.00, 'http://image.com');
+insert into animal values(null, 'loro', 'tina', 'Psittacus erithacus', '2 meses', 'Tararea el himno de España', 23.00, 'http://image.com');
+insert into animal values(null, 'perro', 'giva', 'dalmata', '1 año',  'muy mansito', 17.00, 'http://image.com');
+insert into animal values(null, 'conejo', 'sabana', 'belier Gold', 'año y medio', 'Se deja mimar que da gusto', 14.00, 'http://image.com');
+insert into animal values(null, 'hamster', 'currito', 'Hanster Comun', '1 año' , 'se esta preparando para la carrera nocturna', 12.50, 'http://image.com');
+insert into animal values(null, 'gato', 'mini', 'bombai', '1 año', 'gato cariñoso y goloso', 18.00, 'http://image.com');
 
 insert into tiene values(3, 4, 1);
 insert into tiene values(2, 2, 1);
@@ -104,14 +106,14 @@ insert into tiene values(5, 3, 1);
 insert into tiene values(4, 5, 1);
 insert into tiene values(6, 1, 1);
 
-insert into accesorio values(null, 'Correa','Correa para perros' , 10, 3.00);
-insert into accesorio values(null, 'sonajero', 'Juguete para gatos o perros', 10, 2.50);
-insert into accesorio values(null, 'Hueso comestible', 'hueso sabroso para perros', 20, 4.00);
-insert into accesorio values(null, 'Brekkies Excel Junior', 'Comida para perros pequeños', 10, 7.00);
-insert into accesorio values(null, 'Brekiies Excel Senior', 'Comida para perros de mas de 7 años', 10, 7.50);
-insert into accesorio values(null, 'Brekkies Excel Cat', 'Comida sabrosa para gatos', 10, 8.00);
-insert into accesorio values(null, 'vitakraft menu', 'Comida para pequeños roedores', 10, 8.00);
-insert into accesorio values(null, 'Pio pa', 'Mezcla para canarios', 10, 1.77);
+insert into accesorio values(null, 'Correa','Correa para perros' , 10, 3.00, 'http://image.com');
+insert into accesorio values(null, 'sonajero', 'Juguete para gatos o perros', 10, 2.50, 'http://image.com');
+insert into accesorio values(null, 'Hueso comestible', 'hueso sabroso para perros', 20, 4.00, 'http://image.com');
+insert into accesorio values(null, 'Brekkies Excel Junior', 'Comida para perros pequeños', 10, 7.00, 'http://image.com');
+insert into accesorio values(null, 'Brekiies Excel Senior', 'Comida para perros de mas de 7 años', 10, 7.50, 'http://image.com');
+insert into accesorio values(null, 'Brekkies Excel Cat', 'Comida sabrosa para gatos', 10, 8.00, 'http://image.com');
+insert into accesorio values(null, 'vitakraft menu', 'Comida para pequeños roedores', 10, 8.00, 'http://image.com');
+insert into accesorio values(null, 'Pio pa', 'Mezcla para canarios', 10, 1.77, 'http://image.com');
 
 insert into compra values(3, 7, 1, 8.00);
 insert into compra values(2, 4, 1, 7.00);
