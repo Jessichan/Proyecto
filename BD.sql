@@ -38,7 +38,7 @@ create table animal
     raza  			varchar(50),
     edad			varchar(10),
     descripcion		varchar(500),
-    precio      	varchar(7),
+    precio      	decimal(5,2),
     imagen			varchar(500),
     primary key(idanimal)
  );
