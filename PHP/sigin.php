@@ -54,7 +54,7 @@
                 <label>Password</label>
                 <input name="pass" type="password" maxlength="16" required>
             </div>
-            <input type="submit" value="Sign Up">
+            <input type="submit" value="Registrarse">
         </form>
     </div>
 

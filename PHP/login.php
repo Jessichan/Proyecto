@@ -53,9 +53,9 @@
             <input name="pass" type="password" required>
         </div>
         <div><center>
-            <input type="submit" value="Log In"></center>
+            <input type="submit" value="Entrar"></center>
         </div><center>
-        <div>¿No tienes cuenta? <a href="/php/proyecto/sigin.php">Sign Up</a></div></center>
+        <div>¿No tienes cuenta? <a href="/php/proyecto/sigin.php">Registrarse</a></div></center>
     </form>
     </div>
 </body>
