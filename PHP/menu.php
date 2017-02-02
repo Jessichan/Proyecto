@@ -42,6 +42,8 @@
         </form>
         <?php echo "<p id=\"saludo\"> Hola, $nombreusuario</p>" ?>
         <br>
+        <input  id="ac" type="button" onclick=" location.href='/php/proyecto/accesorios.php' " value="Accesorios" name="boton1" />
+        <input id="ani" type="button" onclick=" location.href='/php/proyecto/animales.php' " value="Animales" name="boton2" />
     <div id="contenido">
 
     </div>
