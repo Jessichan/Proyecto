@@ -17,7 +17,7 @@ create table cliente
 	email			varchar(100),
 	usuario			varchar(15),
 	tipo			varchar(20),
-	password		varchar(16),
+	password		varchar(50),
 	primary key(idcliente)
 );
 
