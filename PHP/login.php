@@ -33,7 +33,7 @@
                     $_SESSION["iduser"] = $alguien;
                     header("Location: /php/proyecto/menu.php");
                 } else
-                     echo "Invalid Login";
+                     echo "Login no valido";
 
                 $query->close();
             }

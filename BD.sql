@@ -91,15 +91,15 @@ insert into alquiler values(null, 4, now());
 insert into alquiler values(null, 6, now());
 
 insert into animal values(null, 'perro', 'Peludo', 'golden retriever', '3 meses', 'Perro cariñoso y jugueton', 18.00, '/php/proyecto/img/peludo.png');
-insert into animal values(null, 'gato', 'Beng', 'bengala', '4 meses', 'gato cariñoso y goloso', 20.00, '/php/proyecto/gato.jpg');
-insert into animal values(null, 'pajaro', 'Manuel', 'canario', '6 meses', 'ya sabe volar', 15.00, '/php/proyecto/canario.jpg');
-insert into animal values(null, 'loro', 'Tina', 'Psittacus erithacus', '2 meses', 'Tararea el himno de España', 23.00, '/php/proyecto/loro.jpg');
-insert into animal values(null, 'perro', 'Giva', 'dalmata', '1 año',  'muy mansito', 17.00, 'php/proyecto/img/dalmata.jpg');
-insert into animal values(null, 'conejo', 'Sabana', 'belier Gold', 'año y medio', 'Se deja mimar que da gusto', 14.00, 'php/proyecto/img/conejo.jpg');
-insert into animal values(null, 'hamster', 'Currito', 'Hanster Comun', '1 año' , 'se esta preparando para la carrera nocturna', 12.50, 'php/proyecto/img/hanster.jpg');
-insert into animal values(null, 'gato', 'Doraemon', 'bombai', '1 año', 'gato juegueton y cariñoso', 18.00, '/php/proyecto/doraemon.png');
-insert into animal values(null, 'cobaya', 'Kitty', 'peruana', '1 año', 'muy mona', 15.00, '/php/proyecto/cobaya.jpg');
-insert into animal values(null, 'perro', 'Jara', 'meztiza', '9 años', 'chucha agil y pedidora de comida, siempre quiere estar acompanada', 20.00, '/php/proyecto/jara.png');
+insert into animal values(null, 'gato', 'Beng', 'bengala', '4 meses', 'gato cariñoso y goloso', 20.00, '/php/proyecto/img/gato.jpg');
+insert into animal values(null, 'pajaro', 'Manuel', 'canario', '6 meses', 'ya sabe volar', 15.00, '/php/proyecto/img/canario.jpg');
+insert into animal values(null, 'loro', 'Tina', 'Psittacus erithacus', '2 meses', 'Tararea el himno de España', 23.00, '/php/proyecto/img/loro.jpg');
+insert into animal values(null, 'perro', 'Giva', 'dalmata', '1 año',  'muy mansito', 17.00, '/php/proyecto/img/dalmata.jpg');
+insert into animal values(null, 'conejo', 'Sabana', 'belier Gold', 'año y medio', 'Se deja mimar que da gusto', 14.00, '/php/proyecto/img/conejo.jpg');
+insert into animal values(null, 'hamster', 'Currito', 'Hanster Comun', '1 año' , 'se esta preparando para la carrera nocturna', 12.50, '/php/proyecto/img/hanster.jpg');
+insert into animal values(null, 'gato', 'Doraemon', 'bombai', '1 año', 'gato juegueton y cariñoso', 18.00, '/php/proyecto/img/doraemon.png');
+insert into animal values(null, 'cobaya', 'Kitty', 'peruana', '1 año', 'muy mona', 15.00, '/php/proyecto/img/cobaya.jpg');
+insert into animal values(null, 'perro', 'Jara', 'meztiza', '9 años', 'chucha agil y pedidora de comida, siempre quiere estar acompanada', 20.00, '/php/proyecto/img/jara.png');
 
 insert into tiene values(3, 4, 1);
 insert into tiene values(2, 2, 1);
@@ -108,14 +108,14 @@ insert into tiene values(5, 3, 1);
 insert into tiene values(4, 5, 1);
 insert into tiene values(6, 1, 1);
 
-insert into accesorio values(null, 'Correa','Correa para perros' , 10, 3.00, '/php/proyecto/correa.jpg');
-insert into accesorio values(null, 'sonajero', 'Juguete para gatos o perros', 10, 2.50, '/php/proyecto/sonajero.jpg');
-insert into accesorio values(null, 'Hueso comestible', 'hueso sabroso para perros', 20, 4.00, '/php/proyecto/hueso.jpg');
-insert into accesorio values(null, 'Brekkies Excel Junior', 'Comida para perros pequeños', 10, 7.00, '/php/proyecto/comida1.jpg');
-insert into accesorio values(null, 'Brekiies Excel Senior', 'Comida para perros de mas de 7 años', 10, 7.50, '/php/proyecto/comida2.jpg');
-insert into accesorio values(null, 'Brekkies Excel Cat', 'Comida sabrosa para gatos', 10, 8.00, '/php/proyecto/comidag.jpg');
-insert into accesorio values(null, 'vitakraft menu', 'Comida para pequeños roedores', 10, 8.00, '/php/proyecto/comidac.jpg');
-insert into accesorio values(null, 'Pio pa', 'Mezcla para canarios', 10, 1.77, '/php/proyecto/mezclac.jpg');
+insert into accesorio values(null, 'Correa','Correa para perros' , 10, 3.00, '/php/proyecto/img/correa.jpg');
+insert into accesorio values(null, 'sonajero', 'Juguete para gatos o perros', 10, 2.50, '/php/proyecto/img/sonajero.jpg');
+insert into accesorio values(null, 'Hueso comestible', 'hueso sabroso para perros', 20, 4.00, '/php/proyecto/img/hueso.jpg');
+insert into accesorio values(null, 'Brekkies Excel Junior', 'Comida para perros pequeños', 10, 7.00, '/php/proyecto/img/comida1.jpg');
+insert into accesorio values(null, 'Brekiies Excel Senior', 'Comida para perros de mas de 7 años', 10, 7.50, '/php/proyecto/img/comida2.jpg');
+insert into accesorio values(null, 'Brekkies Excel Cat', 'Comida sabrosa para gatos', 10, 8.00, '/php/proyecto/img/comidag.jpg');
+insert into accesorio values(null, 'vitakraft menu', 'Comida para pequeños roedores', 10, 8.00, '/php/proyecto/img/comidac.jpg');
+insert into accesorio values(null, 'Pio pa', 'Mezcla para canarios', 10, 1.77, '/php/proyecto/img/mezclac.jpg');
 
 insert into compra values(3, 7, 1, 8.00);
 insert into compra values(2, 4, 1, 7.00);

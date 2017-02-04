@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Menu</title>
-  <link rel="stylesheet" href="css/menu1.css">
+  <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 
@@ -28,9 +28,9 @@
                 if ($result->num_rows > 0)
                     $nombreusuario = $result->fetch_object()->nombre;
                 else
-                    echo "Imposible conseguir nombre de usuario";
+                    echo "No se ha encontrado nombre de usuario";
             }else
-                echo "Wrong Query";
+                echo "Query fallida";
     }else
       header('Location: /php/proyecto/login.php');
   ?>
@@ -44,9 +44,6 @@
         <br>
         <input id="ani" type="button" onclick=" location.href='/php/proyecto/animales.php' " value="Animales" name="boton2" />
         <input  id="ac" type="button" onclick=" location.href='/php/proyecto/accesorios.php' " value="Accesorios" name="boton1" />
-    <div id="contenido">
-
-    </div>
   </div>
 </body>
 </html>

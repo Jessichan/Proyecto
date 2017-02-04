@@ -23,7 +23,7 @@
             if ($result = $connection->query($sigin)) {
                 header("location: /php/proyecto/login.php");
             } else
-                echo "Wrong Query";
+                echo "Query fallida";
         }
     ?>
 
