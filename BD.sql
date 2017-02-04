@@ -13,7 +13,7 @@ create table cliente
 	idcliente		int auto_increment not null,
 	nombre			varchar(25),
 	apellidos		varchar(50),
-	Telefono		varchar(9),
+	telefono		varchar(9),
 	email			varchar(100),
 	usuario			varchar(15),
 	tipo			varchar(20),
