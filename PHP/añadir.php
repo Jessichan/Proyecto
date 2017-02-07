@@ -1,8 +1,8 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Sigin</title>
+    <title>registrar</title>
     <link rel="stylesheet" href="css/sigin.css">
 </head>
 <body>
@@ -67,8 +67,7 @@
               echo "<td>".$obj->password."</td>";
               echo "</tr>";
           }
-          //Ojo, esto es para cerrar la consulta SELECT de JD no el insert
-          //Free the result. Avoid High Memory Usages
+
           $result->close();
           unset($obj);
           //Cerrar la conexion con la base de datos.
