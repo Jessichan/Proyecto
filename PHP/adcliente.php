@@ -32,6 +32,8 @@
             echo "<th>Modificar</th>";
             echo "<th>Borrar</th>";
             echo "</thead>";
+            // echo "</tr>";
+            // echo "</table>";
 
           }
 

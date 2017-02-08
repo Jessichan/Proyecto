@@ -52,7 +52,7 @@
             </div>
             <div>
                 <label>Password</label>
-                <input name="pass" type="password" maxlength="16" required>
+                <input name="pass" type="password" maxlength="50" required>
             </div>
             <input type="submit" value="Registrarse">
         </form>
