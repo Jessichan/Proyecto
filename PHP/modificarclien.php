@@ -11,7 +11,7 @@
         if(!$_GET['id'])
             header("Location: adcliente.php");
 
-        $idCliente = $_GET['id'];
+        $idcliente = $_GET['id'];
 
         $clienteid;
         $clientenombre;
@@ -22,7 +22,7 @@
         $clientetipo;
         $clientepassword;
 
-        if ($result = $connection->query("SELECT * FROM cliente WHERE idcliente = $idCliente")){
+        if ($result = $connection->query("SELECT * FROM cliente WHERE idcliente = $idcliente")){
         // if ($result = $connection->query("SELECT * FROM cliente WHERE idcliente = 1")){
 
             if($result->num_rows > 0){
@@ -70,6 +70,10 @@
                 <label>Usuario</label>
                 <input name="user" type="text" value="<?php echo  $clienteusuario; ?>" maxlength="15" required>
             </div>
+             <div>
+                <label>Tipo</label>
+                <input name="tipo" type="text" value="<?php echo  $clientetipo; ?>" maxlength="15" required>
+            </div>
             <div>
                 <label>Password</label>
                 <input name="pass" type="password" value="<?php echo $clientepassword; ?>" maxlength="50" required>
@@ -77,6 +81,47 @@
             <input type="submit" value="Modificar">
         </form>
 
+
+ <?php
+
+        if (isset($_POST['id'])) {
+
+        //variables
+        $id=$_POST['id'];
+        $nombre=$_POST['nombre'];
+        $apellidos=$_POST['ape'];
+        $telefono=$_POST['tfono'];
+        $email=$_POST['email'];
+        $usuario=$_POST['user'];
+        $tipo=$_POST['tipo'];
+        $password=$_POST['pass'];
+
+        //consulta
+        $consulta="UPDATE  cliente SET
+        'id' =  '$id',
+        'nombre' =  '$nombre',
+        'ape' =  '$apellidos',
+        'tfono' =  '$telefono',
+        'email' =  '$email',
+        'user' =  '$usuario',
+        'tipo' = '$tipo',
+        'pass' = md5('$password'),
+        WHERE  `id` =$idcliente;";
+
+
+        if ($result = $connection->query($consulta))
+
+           {
+          header ("Location: modificarclien.php");
+        } else {
+
+              echo "Error: " . $result . "<br>" . mysqli_error($connection);
+        }
+      }
+
+
+
+        ?>
 
 </body>
 </html>
