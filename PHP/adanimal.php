@@ -53,9 +53,9 @@
               echo "<td>".$obj->descripcion."</td>";
               echo "<td>".$obj->precio."</td>";
               echo "<td>".$obj->imagen."</td>";
-              echo "<td><a href='añadir.php?id=".$obj->idanimal."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='modificar.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
-              echo "<td><a href='borrar.php?id=".$obj->idanimal."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='añadirani.php?id=".$obj->idanimal."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='modificarani.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='borrarani.php?id=".$obj->idanimal."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }
 

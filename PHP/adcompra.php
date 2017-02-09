@@ -45,9 +45,9 @@
               echo "<td>".$obj->idaccesorio."</td>";
               echo "<td>".$obj->cantidad."</td>";
               echo "<td>".$obj->preciototal."</td>";
-              echo "<td><a href='añadir.php?id=".$obj->idcliente."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='modificar.php?id=".$obj->idcliente."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
-              echo "<td><a href='borrar.php?id=".$obj->idcliente."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='añadircom.php?id=".$obj->idcliente."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='modificarcom.php?id=".$obj->idcliente."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='borrarcom.php?id=".$obj->idcliente."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }
 

@@ -43,9 +43,9 @@
               echo "<td>".$obj->idanimal."</td>";
               echo "<td>".$obj->idalquiler."</td>";
               echo "<td>".$obj->cantidad."</td>";
-              echo "<td><a href='añadir.php?id=".$obj->idanimal."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='modificar.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
-              echo "<td><a href='borrar.php?id=".$obj->idanimal."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='añadirtiene.php?id=".$obj->idanimal."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='modificartiene.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='borrartiene.php?id=".$obj->idanimal."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }
 
