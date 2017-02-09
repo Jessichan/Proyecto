@@ -9,9 +9,9 @@
        include_once "conec.php";
 
         if(!$_GET['id'])
-            header("Location: adcliente.php");
+            header("Location: adanimal.php");
 
-        $idCliente = $_GET['id'];
+        $idanimal = $_GET['id'];
 
         $animalid;
         $animalespecie;
@@ -43,75 +43,44 @@
 
     ?>
 
-        <?php
-        if (isset($_POST["id"])) : ?>
+
+
         <form method="post">
             <div>
                 <label>Id</label>
-                <input name="id" type="text" value="<?php echo $animalid; ?>" maxlength="25" required>
+                <input name="id" type="text" value="<?php echo $animalid; ?>" maxlength="11" required>
             </div>
             <div>
                 <label>Especie</label>
-                <input name="nombre" type="text" value="<?php echo $animalespecie; ?>" maxlength="25" required>
+                <input name="esp" type="text" value="<?php echo $animalespecie; ?>" maxlength="20" required>
             </div>
             <div>
 
                 <label>Nombre</label>
-                <input name="ape" type="text" value="<?php echo  $animalnombre; ?>" maxlength="50" required>
+                <input name="nom" type="text" value="<?php echo  $animalnombre; ?>" maxlength="25" required>
             </div>
             <div>
                 <label>Raza</label>
-                <input name="tfono" type="tel" value="<?php echo $animalraza; ?>" pattern="[0-9]{9}" required>
+                <input name="raza" type="text" value="<?php echo $animalraza; ?>" maxlength="50" required>
             </div>
             <div>
                 <label>Edad</label>
-                <input name="email" type="email" value="<?php echo $animaledad; ?>" maxlength="100" required>
+                <input name="edad" type="text" value="<?php echo $animaledad; ?>" maxlength="10" required>
             </div>
             <div>
                 <label>Descripcion</label>
-                <input name="user" type="text" value="<?php echo  $animaldescripcion; ?>" maxlength="15" required>
+                <input name="des" type="text" value="<?php echo  $animaldescripcion; ?>" maxlength="500" required>
             </div>
             <div>
                 <label>Precio</label>
-                <input name="pass" type="password" value="<?php echo $animalprecio; ?>" maxlength="50" required>
+                <input name="precio" type="text" value="<?php echo $animalprecio; ?>" maxlength="6" required>
             </div>
              <div>
                 <label>Imagen</label>
-                <input name="pass" type="password" value="<?php echo $animalimagen; ?>" maxlength="50" required>
+                <input name="text" type="text" value="<?php echo $animalimagen; ?>" maxlength="50" required>
             </div>
             <input type="submit" value="Modificar">
         </form>
-
-
-<?php
-
-include_once "conec.php";
-
-    $cod=$_POST['id'];
-        $consulta1= "DELETE FROM cliente VALUES('$cod','".$_POST['id']."','".$_POST['nombre']."','".$_POST['ape']."','".$_POST['tfono']."','".$_POST['email']."', '".$_POST['user']."', '".$_POST['pass']."')";
-
-       $consulta2= "INSERT INTO cliente VALUES('$cod','".$_POST['id']."','".$_POST['nombre']."','".$_POST['ape']."','".$_POST['tfono']."','".$_POST['email']."', '".$_POST['user']."', '".$_POST['pass']."')";
-
-
-       var_dump($consulta);
-
-       $result = $connection->query($consulta);
-
-       if (!$result) {
-            echo "Query Error";
-       } else {
-             echo "New client added";
-       }
-
-     ?>
-
-
-
- ?>
-
-
-
-
 
 </body>
 </html>

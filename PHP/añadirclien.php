@@ -78,7 +78,6 @@
     ?>
 
  <div id="caja">
-        <img id="logo" src="/php/proyecto/img/logo.png">
         <form method="post">
             <div>
                 <label>Nombre</label>

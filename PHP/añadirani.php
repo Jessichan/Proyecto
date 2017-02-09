@@ -10,21 +10,21 @@
     <?php
         include_once "conec.php";
 
-        if (isset($_POST["nombre"])) {
+        if (isset($_POST["especie"])) {
+            $esp   = $_POST['especie'];
             $nom   = $_POST['nombre'];
-            $ape   = $_POST['ape'];
-            $tele  = $_POST['tfono'];
-            $email = $_POST['email'];
-            $user   = $_POST['user'];
-            $tipo  = 'User';
-            $pass   = ($_POST['pass']);
+            $raza  = $_POST['raza'];
+            $edad = $_POST['edad'];
+            $desc   = $_POST['descripcion'];
+            $precio  = $_POST['precio'];
+            $imag   = ($_POST['imagen']);
 
-    $inser = "INSERT INTO cliente VALUES (NULL, '$nom', '$ape', '$tele', '$email', '$user', '$tipo', '$pass');";
+    $inser = "INSERT INTO animal VALUES (NULL, '$esp', '$nom', '$raza', '$edad', '$desc', '$precio', '$imag');";
 
       //if (mysqli_query($connection, $inser)) {
 
 
-        if ($result = $connection->query("SELECT * FROM cliente;")) {
+        if ($result = $connection->query("SELECT * FROM animal;")) {
             printf("<p>The select query returned %d rows.</p>", $result->num_rows);
       } else {
           //en caso de que el insert falle, imprimimos Error: + la consulta y el error que produce
@@ -38,14 +38,14 @@
           <table style="border:1px solid black">
           <thead>
             <tr>
-              <th>Idcliente</th>
+              <th>Idanimal</th>
+              <th>Especie</th>
               <th>Nombre</th>
-              <th>Apellidos</th>
-              <th>Telefono</th>
-              <th>Email</th>
-              <th>Usuario</th>
-              <th>Tipo</th>
-              <th>Password</th>
+              <th>Raza</th>
+              <th>Edad</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th>Imagen</th>
           </thead>
 
       <?php
@@ -57,14 +57,14 @@
           while($obj = $result->fetch_object()) {
               //PRINTING EACH ROW
               echo "<tr>";
-              echo "<td>".$obj->idcliente."</td>";
+              echo "<td>".$obj->idanimal."</td>";
+              echo "<td>".$obj->especie."</td>";
               echo "<td>".$obj->nombre."</td>";
-              echo "<td>".$obj->apellidos."</td>";
-              echo "<td>".$obj->telefono."</td>";
-              echo "<td>".$obj->email."</td>";
-              echo "<td>".$obj->usuario."</td>";
-              echo "<td>".$obj->tipo."</td>";
-              echo "<td>".$obj->password."</td>";
+              echo "<td>".$obj->raza."</td>";
+              echo "<td>".$obj->edad."</td>";
+              echo "<td>".$obj->descripcion."</td>";
+              echo "<td>".$obj->precio."</td>";
+              echo "<td>".$obj->imagen."</td>";
               echo "</tr>";
           }
 
@@ -78,34 +78,42 @@
     ?>
 
  <div id="caja">
-        <img id="logo" src="/php/proyecto/img/logo.png">
-        <form method="post">
+       <form method="post">
             <div>
+                <label>Id</label>
+                <input name="id" type="text" value="<?php echo $animalid; ?>" maxlength="11" required>
+            </div>
+            <div>
+                <label>Especie</label>
+                <input name="esp" type="text" value="<?php echo $animalespecie; ?>" maxlength="20" required>
+            </div>
+            <div>
+
                 <label>Nombre</label>
-                <input name="nombre" type="text" maxlength="25" required>
+                <input name="nom" type="text" value="<?php echo  $animalnombre; ?>" maxlength="25" required>
             </div>
             <div>
-                <label>Apellidos</label>
-                <input name="ape" type="text" maxlength="50" required>
+                <label>Raza</label>
+                <input name="raza" type="text" value="<?php echo $animalraza; ?>" maxlength="50" required>
             </div>
             <div>
-                <label>Telefono</label>
-                <input name="tfono" type="tel" pattern="[0-9]{9}" required>
+                <label>Edad</label>
+                <input name="edad" type="text" value="<?php echo $animaledad; ?>" maxlength="10" required>
             </div>
             <div>
-                <label>Email</label>
-                <input name="email" type="email" maxlength="100" required>
+                <label>Descripcion</label>
+                <input name="des" type="text" value="<?php echo  $animaldescripcion; ?>" maxlength="500" required>
             </div>
             <div>
-                <label>Usuario</label>
-                <input name="user" type="text" maxlength="15" required>
+                <label>Precio</label>
+                <input name="precio" type="text" value="<?php echo $animalprecio; ?>" maxlength="6" required>
             </div>
-            <div>
-                <label>Password</label>
-                <input name="pass" type="password" maxlength="16" required>
+             <div>
+                <label>Imagen</label>
+                <input name="text" type="text" value="<?php echo $animalimagen; ?>" maxlength="50" required>
             </div>
-            <input type="submit" value="Registrarse">
+            <input type="submit" value="Modificar">
         </form>
-    </div>
+
     </body>
 </html>
