@@ -43,8 +43,7 @@
 
     ?>
 
-        <?php
-        if (isset($_POST["id"])) : ?>
+
         <form method="post">
             <div>
                 <label>Id</label>
@@ -79,36 +78,5 @@
         </form>
 
 
-<?php
-
-include_once "conec.php";
-
-    $cod=$_POST['id'];
-        $consulta1= "DELETE FROM cliente VALUES('$cod','".$_POST['id']."','".$_POST['nombre']."','".$_POST['ape']."','".$_POST['tfono']."','".$_POST['email']."', '".$_POST['user']."', '".$_POST['pass']."')";
-
-       $consulta2= "INSERT INTO cliente VALUES('$cod','".$_POST['id']."','".$_POST['nombre']."','".$_POST['ape']."','".$_POST['tfono']."','".$_POST['email']."', '".$_POST['user']."', '".$_POST['pass']."')";
-
-
-       var_dump($consulta);
-
-       $result = $connection->query($consulta);
-
-       if (!$result) {
-            echo "Query Error";
-       } else {
-             echo "New client added";
-       }
-
-     ?>
-
-
-
- ?>
-
-
-
-
-
 </body>
 </html>
-
