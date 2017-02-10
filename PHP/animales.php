@@ -55,7 +55,7 @@
             }else
                 echo "Query fallida";
 		}else
-			header('Location: /php/proyecyo/login.php');
+			header('Location: /php/proyecto/login.php');
 	?>
 
 	<img id="enca" src="/php/proyecto/img/porta.jpg">

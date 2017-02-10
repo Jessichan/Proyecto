@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Accesorios</title>
-	<link rel="stylesheet" href="css/animales.css">
+	<link rel="stylesheet" href="css/accesorios.css">
 </head>
 <body>
 
@@ -55,7 +55,7 @@
             }else
                 echo "Query fallida";
 		}else
-			header('Location: /php/proyecyo/login.php');
+			header('Location: /php/proyecto/login.php');
 	?>
 
 	<img id="enca" src="/php/proyecto/img/porta.jpg">
@@ -70,7 +70,7 @@
 			<?php
 				for($i=0;$i<count($nombreacces);$i++){
             echo "<a href='/php/proyecto/detallesaccesorio.php?id=".$idacces[$i]."'>";
-	    			echo "<div class='animal' data-id='$idacces[$i]'>";
+	    			echo "<div class='accesorio' data-id='$idacces[$i]'>";
 	    			echo "<img src='".$imagenacces[$i]."'>";
 	    			echo "<h3>".$nombreacces[$i]."</h3>";
 	    			echo "<p>".$precioacces[$i]."€</p>";
