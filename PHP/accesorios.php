@@ -34,6 +34,7 @@
 
 
   			// coger datos de los animales
+      $idacces = [];
 			$nombreacces = [];
 			$precioacces = [];
 			$imagenacces = [];
@@ -44,6 +45,7 @@
             if ($result = $connection->query($cogeracce)) {
                 if ($result->num_rows > 0){
                 	while($accesorio = $result->fetch_object()){
+                    array_push($idacces, $accesorio->idaccesorio);
                 		array_push($nombreacces, $accesorio->nombre);
                 		array_push($precioacces, $accesorio->precio);
                 		array_push($imagenacces, $accesorio->imagen);
@@ -67,11 +69,13 @@
 		<div id="contenido">
 			<?php
 				for($i=0;$i<count($nombreacces);$i++){
-	    			echo "<div class='animal'>";
+            echo "<a href='/php/proyecto/detallesaccesorio.php?id=".$idacces[$i]."'>";
+	    			echo "<div class='animal' data-id='$idacces[$i]'>";
 	    			echo "<img src='".$imagenacces[$i]."'>";
 	    			echo "<h3>".$nombreacces[$i]."</h3>";
 	    			echo "<p>".$precioacces[$i]."€</p>";
 	    			echo "</div>";
+            echo "</a>";
 				}
 			?>
 		</div>
