@@ -34,6 +34,7 @@
 
 
   			// coger datos de los animales
+      $animalid = [];
 			$nombreanimal = [];
 			$precioanimal = [];
 			$imagenanimal = [];
@@ -44,6 +45,7 @@
             if ($result = $connection->query($cogeranimal)) {
                 if ($result->num_rows > 0){
                 	while($animal = $result->fetch_object()){
+                    array_push($animalid, $animal->idanimal);
                 		array_push($nombreanimal, $animal->nombre);
                 		array_push($precioanimal, $animal->precio);
                 		array_push($imagenanimal, $animal->imagen);
@@ -67,11 +69,13 @@
 		<div id="contenido">
 			<?php
 				for($i=0;$i<count($nombreanimal);$i++){
-	    			echo "<div class='animal'>";
+	    		  echo "<a href='/php/proyecto/detallesanimal.php?id=".$animalid[$i]."'>";
+          	echo "<div class='animal' data-id='$animalid[$i]'>";
 	    			echo "<img src='".$imagenanimal[$i]."'>";
 	    			echo "<h3>".$nombreanimal[$i]."</h3>";
 	    			echo "<p>".$precioanimal[$i]."€</p>";
-	    			echo "</div>";
+            echo "</div>";
+            echo "</a>";
 				}
 			?>
 		</div>
