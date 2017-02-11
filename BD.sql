@@ -100,6 +100,9 @@ insert into animal values(null, 'hamster', 'Currito', 'Hanster Comun', '1 año' 
 insert into animal values(null, 'gato', 'Doraemon', 'bombai', '1 año', 'gato juegueton y cariñoso', 18.00, '/php/proyecto/img/doraemon.png');
 insert into animal values(null, 'cobaya', 'Kitty', 'peruana', '1 año', 'muy mona', 15.00, '/php/proyecto/img/cobaya.jpg');
 insert into animal values(null, 'perro', 'Jara', 'meztiza', '9 años', 'chucha agil y pedidora de comida, siempre quiere estar acompanada', 20.00, '/php/proyecto/img/jara.png');
+insert into animal values(null, 'cotorras', 'Pepito Juanito', 'cotorras cubanas', '8 meses', 'estas cotorras pueden hablar y son muy graciosas', 20.00, '/php/proyecto/img/cotorras.jpg');
+insert into animal values(null, 'perro', 'Yaico', 'Husky Siberiano', '7 meses', 'perro muy jugueton y sociable', 27.00, '/php/proyecto/img/yaico.jpg');
+insert into animal values(null, 'perro', 'Rokko', 'Pastor Aleman', '1 año', 'Es muy jugueton y no le gusta estar solo', 25.00, '/php/proyecto/img/rokko.jpg');
 
 insert into tiene values(3, 4, 1);
 insert into tiene values(2, 2, 1);
@@ -116,6 +119,14 @@ insert into accesorio values(null, 'Brekiies Excel Senior', 'Comida para perros 
 insert into accesorio values(null, 'Brekkies Excel Cat', 'Comida sabrosa para gatos', 10, 8.00, '/php/proyecto/img/comidag.jpg');
 insert into accesorio values(null, 'vitakraft menu', 'Comida para pequeños roedores', 10, 8.00, '/php/proyecto/img/comidac.jpg');
 insert into accesorio values(null, 'Pio pa', 'Mezcla para canarios', 10, 1.77, '/php/proyecto/img/mezclac.jpg');
+insert into accesorio values(null, 'Jaula Conejo', 'Jaula mediana para conejos', 10, 8.00, '/php/proyecto/img/jaulaconejo.jpg');
+insert into accesorio values(null, 'Jaula Hanster', 'Jaula pequeña para hansters', 10, 7.50, '/php/proyecto/img/jaulahanster.jpg');
+insert into accesorio values(null, 'Jaula Loros', 'Jaula mediana para loros', 10, 8.00, '/php/proyecto/img/jaulaloros.jpg');
+insert into accesorio values(null, 'Cama', 'Cama en forma de casa para perros o gatos', 10, 7.00, '/php/proyecto/img/camapega.jpg');
+insert into accesorio values(null, 'Cama Sofa', 'Cama para perros muy comoda', 8, 10.00, '/php/proyecto/img/camasofa.jpg');
+insert into accesorio values(null, 'Jaula Pajaros', 'Jaula mediana para uno o dos pajaros', 7, 7.00, '/php/proyecto/img/jaulapajaros.jpg');
+insert into accesorio values(null, 'Ropa Perros Pequeños', 'Ropa para perros pequeños. Tallas S, M, L, XL', 10, 12.00, '/php/proyecto/img/ropagris.jpg');
+insert into accesorio values(null, 'Ropa Perros Grandes', 'Ropa para perros grandes. Tallas S, M, L, XL', 10, 16.00, '/php/proyecto/img/ropagrande.jpg');
 
 insert into compra values(3, 7, 1, 8.00);
 insert into compra values(2, 4, 1, 7.00);
