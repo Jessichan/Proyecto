@@ -50,7 +50,7 @@
               echo "<td>".$obj->precio."</td>";
               echo "<td>".$obj->imagen."</td>";
               echo "<td><a href='añadiracces.php?id=".$obj->idaccesorio."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='modificaracces.php?id=".$obj->idaccesorio."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='editaracces.php?id=".$obj->idaccesorio."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
               echo "<td><a href='borraracces.php?id=".$obj->idaccesorio."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }

@@ -56,7 +56,7 @@
               echo "<td>".$obj->tipo."</td>";
               echo "<td>".$obj->password."</td>";
               echo "<td><a href='añadirclien.php?id=".$obj->idcliente."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='modificarclien.php?id=".$obj->idcliente."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='editarclien.php?id=".$obj->idcliente."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
               echo "<td><a href='borrarclien.php?id=".$obj->idcliente."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }

@@ -112,7 +112,7 @@
         if ($result = $connection->query($consulta))
 
            {
-          header ("Location: modificarclien.php");
+          header ("Location: editarclien.php");
         } else {
 
               echo "Error: " . $result . "<br>" . mysqli_error($connection);
