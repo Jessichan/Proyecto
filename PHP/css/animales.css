@@ -15,6 +15,7 @@ input[type=submit] {
 	background-color: #E94330;
 	border-color: firebrick;
 	margin-top: -30px;
+	cursor:pointer;
 }
 
 

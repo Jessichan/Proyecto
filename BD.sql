@@ -78,9 +78,9 @@ create table compra
 
 -- insertar datos
 insert into cliente values(null, 'Maria', 'Gonzalez', '657890634','mariag@gmail.com','admin', 'Admin', '1234');
-insert into cliente values(null, 'Carlos', 'Martin', '654321672', 'carlosmar@gmail', 'luism', 'User', '168923');
+insert into cliente values(null, 'Carlos', 'Martin', '654321672', 'carlosmar@gmail', 'carlos', 'User', '12345678');
 insert into cliente values(null, 'Amanda', 'Marin', '647896541', 'amanda23@gmail.com', 'amanda', 'User', '123456');
-insert into cliente values(null, 'Jose', 'Laguillo', '654789064', 'josela@gmail.com', 'josel', 'User', 'asdfgh');
+insert into cliente values(null, 'Jose', 'Laguillo', '654789064', 'josela@gmail.com', 'josel', 'User', 'josel');
 insert into cliente values(null, 'Jonni', 'Melavo', '654378906', 'joni@gmail.com', 'jonim', 'User', 'jonim');
 insert into cliente values(null, 'Holi', 'Moli', '675432349', 'holimoli@hotmail.com', 'holim', 'User', 'holim');
 

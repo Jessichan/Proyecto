@@ -53,7 +53,7 @@
             <input name="pass" type="password" required>
         </div>
         <div><center>
-            <input type="submit" value="Entrar"></center>
+            <input type="submit" value="Entrar" style=cursor:pointer;></center>
         </div><center>
         <div>¿No tienes cuenta? <a href="/php/proyecto/sigin.php">Registrarse</a></div></center>
     </form>
