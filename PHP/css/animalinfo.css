@@ -1,0 +1,53 @@
+#caja{
+	width: 1020px;
+	margin: 50px auto;
+	background: #b91515;
+	padding: 15px;
+	border-radius: 20px;
+	margin-top: 10px;
+	margin-left: 160px;
+  display: flex;
+	flex-flow: row wrap;
+	height: 300px;
+}
+
+body{
+	background: #c63a3a;
+	width: 95%;
+    color: #e9d4d4;
+}
+
+#saludo{
+
+     margin-left: 840px;
+     margin-top: -50px
+}
+
+img{
+	width: 290px;
+	height: 200px;
+}
+
+input[type=submit] {
+	margin-left: 930px;
+	background-color: #E94330;
+	border-color: firebrick;
+	margin-top: -5px;
+	cursor:pointer;
+	height: 22px;
+}
+
+#foto{
+width: 290px;
+height: 200px;
+
+}
+
+#info{
+	width: 30%;
+	margin: 10px;
+}
+
+#alquila{
+	margin-left: 430px;
+}
