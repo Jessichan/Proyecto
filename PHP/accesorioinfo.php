@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Info de Animal</title>
-    <link rel="stylesheet" href="css/animalinfo.css">
+    <link rel="stylesheet" href="css/accesorioinfo.css">
 </head>
 <body>
     <?php
@@ -34,9 +34,9 @@
         }
 
         // Consigue el ID del animal y recoge su info
-        $infoanimal = "SELECT * FROM animal WHERE idanimal = {$_GET['id']};";
+        $infoacces = "SELECT * FROM accesorio WHERE idaccesorio = {$_GET['id']};";
 
-        if ($result = $connection->query($infoanimal)) {
+        if ($result = $connection->query($infoacces)) {
             if ($result){
                 $obj = $result->fetch_object();
         echo "<div id='caja'>";
@@ -44,17 +44,15 @@
 
                 echo "<p id=saludo> Hola, $nombreusu</p>";
 
-                    echo "<div id='foto'>";
-                        echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
-                    echo "</div>";
+            echo "<div id='foto'>";
+                echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
+            echo "</div>";
                 echo "<div id='info'>";
-                            echo "<p><b> </b>".$obj->nombre."</p>";
-                            echo "<p><b> </b>".$obj->raza."</p>";
-                            echo "<p><b> </b>".$obj->edad."</p>";
-                            echo "<p><b></b>".$obj->descripcion."</p>";
-                            echo "<p><b> </b>".$obj->precio." €</p>";
-                echo "</div>";
-            echo "<input id='alquila' type='button' onclick=`location.href='/php/proyecto/alquiler.php'´ value='Alquilar' style=cursor:pointer; name='alquila'>";
+                echo "<p><b> </b>".$obj->nombre."</p>";
+                echo "<p><b> </b>".$obj->descripcion."</p>";
+                echo "<p><b> </b>".$obj->cantidad."</p>";
+                echo "<p><b> </b>".$obj->precio." €</p>";
+            echo "</div>";
         echo "</div>";
             }else
                 echo "Imposible conseguir los datos";
@@ -63,6 +61,6 @@
 
 
     ?>
-    <input  id="ac" type="button" onclick=" location.href='/php/proyecto/alquiler.php' " value="Alquilar" style=cursor:pointer; name="alquila" />
+
 </body>
 </html>
