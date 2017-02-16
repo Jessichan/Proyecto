@@ -30,3 +30,14 @@ td {
 body{
 	background: #e4e0ea;
 }
+
+input[type="button"]{
+  margin-left: 200px;
+  margin-top: -180px;
+  position: absolute;
+  border-radius: 8px;
+  background: pink;
+  padding: 5px 15px;
+  border: none;
+  color: #666;
+}

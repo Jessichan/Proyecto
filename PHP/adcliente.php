@@ -28,7 +28,6 @@
             echo "<th>Usuario</th>";
             echo "<th>Tipo</th>";
             echo "<th>Password</th>";
-            echo "<th>Añadir</th>";
             echo "<th>Modificar</th>";
             echo "<th>Borrar</th>";
             echo "</thead>";
@@ -55,7 +54,6 @@
               echo "<td>".$obj->usuario."</td>";
               echo "<td>".$obj->tipo."</td>";
               echo "<td>".$obj->password."</td>";
-              echo "<td><a href='añadirclien.php?id=".$obj->idcliente."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
               echo "<td><a href='editarclien.php?id=".$obj->idcliente."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
               echo "<td><a href='borrarclien.php?id=".$obj->idcliente."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
@@ -70,5 +68,8 @@
       //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
 
     ?>
+    </table>
+   <input type="button" onclick=" location.href='/php/proyecto/añadirclien.php' " value="Añadir Cliente" style=cursor:pointer; name="boton" />
+
   </body>
 </html>
