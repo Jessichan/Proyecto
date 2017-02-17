@@ -69,7 +69,7 @@
 		<div id="contenido">
 			<?php
 				for($i=0;$i<count($nombreacces);$i++){
-            echo "<a href='/php/proyecto/detallesaccesorio.php?id=".$idacces[$i]."'>";
+            echo "<a href='/php/proyecto/accesorioinfo.php?id=".$idacces[$i]."'>";
 	    			echo "<div class='accesorio' data-id='$idacces[$i]'>";
 	    			echo "<img src='".$imagenacces[$i]."'>";
 	    			echo "<h3>".$nombreacces[$i]."</h3>";

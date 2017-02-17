@@ -8,7 +8,6 @@
   </head>
   <body>
     <?php
-
        include_once "conec.php";
 
       //MAKING A SELECT QUERY
@@ -69,7 +68,7 @@
 
     ?>
     </table>
-   <input type="button" onclick=" location.href='/php/proyecto/añadirclien.php' " value="Añadir Cliente" style=cursor:pointer; name="boton" />
+   <input type="button" onclick=" location.href='/php/proyecto/agregarclien.php' " value="Añadir Cliente" style=cursor:pointer; name="boton" />
 
   </body>
 </html>

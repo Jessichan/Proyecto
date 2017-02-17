@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passing info with POST and HTML FORMS using a single file.</title>
-    <link rel="stylesheet" type="text/css" href=" ">
+    <link rel="stylesheet" type="text/css" href="css/agregarclien.css ">
     <style>
       span {
         width: 100px;
@@ -22,7 +22,7 @@
 		if (!isset($_POST["nombre"])) : ?>
         <form method="post">
           <fieldset>
-            <legend>CLIENTE</legend>
+            <legend>Cliente</legend>
             <span>Nombre:</span><input type="text" name="nombre"><br>
             <span>Apellidos:</span><input type="text" name="ape"><br>
             <span>Telefono:</span><input type="text" name="tel"><br>
