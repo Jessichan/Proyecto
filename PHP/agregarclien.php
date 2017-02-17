@@ -13,47 +13,34 @@
     </style>
   </head>
   <body>
-
-      <!-- PHP STRUCTURE FOR CONDITIONAL HTML -->
-      <!-- FIRST TIME. NO DATA IN THE POST (checking a required form field) -->
-      <!-- So we must show the form -->
-
-      <?php
-		if (!isset($_POST["nombre"])) : ?>
         <form method="post">
-          <fieldset>
-            <legend>Cliente</legend>
-            <span>Nombre:</span><input type="text" name="nombre"><br>
-            <span>Apellidos:</span><input type="text" name="ape"><br>
-            <span>Telefono:</span><input type="text" name="tel"><br>
-            <span>Email:</span><input type="text" name="email"><br>
-            <span>Usuario:</span><input type="text" name="usu"><br>
-            <span>Tipo:</span><input type="text" name="tipo"><br>
-            <span>Pasword:</span><input type="text" name="pass"><br>
-	    <span><input type="submit" value="Enviar"><br>
-	  </fieldset>
+            <fieldset>
+              <legend><h3>Cliente</h3></legend>
+            <span>Nombre:</span><input type="text" name="nombre" required><br>
+            <span>Apellidos:</span><input type="text" name="ape" required><br>
+            <span>Telefono:</span><input type="text" name="tel" required><br>
+            <span>Email:</span><input type="text" name="email" required><br>
+            <span>Usuario:</span><input type="text" name="usu" required><br>
+            <span>Tipo:</span><input type="text" name="tipo" required><br>
+            <span>Pasword:</span><input type="text" name="pass" required><br>
+      <span><input id= "enviar" type="submit" value="Enviar"><br>
+      <span><input id="volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
+        </fieldset>
         </form>
 
-      <?php else: ?>
-
       <?php
+        include_once "conec.php";
 
-            include_once "conec.php";
+        if (isset($_POST["nombre"])){
+      	   $consulta = "INSERT INTO cliente VALUES(NULL,'".$_POST['nombre']."','".$_POST['ape']."','".$_POST['tel']."','".$_POST['email']."','".$_POST['usu']."','".$_POST['tipo']."','".$_POST['pass']."')";
 
-  	   $consulta = "INSERT INTO cliente VALUES(NULL,'".$_POST['nombre']."','".$_POST['ape']."','".$_POST['tel']."','".$_POST['email']."','".$_POST['usu']."','".$_POST['tipo']."','".$_POST['pass']."')";
+      	   $result = $connection->query($consulta);
 
-
-  	   $result = $connection->query($consulta);
-
-  	   if (!$result) {
-   		    echo "Query Error";
-       } else {
-  		     echo "cliente añadido";
-  	   }
-
+      	   if (!$result)
+       		    echo "Query Error";
+           else
+               echo "cliente añadido";
+        }
      ?>
-
-      <?php endif ?>
-      <span><input type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
   </body>
 </html>

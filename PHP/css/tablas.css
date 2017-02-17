@@ -31,12 +31,12 @@ body{
 	background: #e4e0ea;
 }
 
-input[type="button"]{
-  margin-left: 200px;
-  margin-top: -180px;
-  position: absolute;
+#volver {
+  position: relative;
+  left: 110px;
+  top: -12px;
   border-radius: 8px;
-  background: pink;
+  background: #c9f;
   padding: 5px 15px;
   border: none;
   color: #666;
