@@ -70,7 +70,7 @@ create table compra
 	idcliente		int,
 	idaccesorio		int,
 	cantidad 		int,
-	preciototal		int,
+	preciototal		decimal(4,2),
 	primary key(idcliente, idaccesorio),
 	foreign key(idcliente) references cliente(idcliente),
 	foreign key(idaccesorio) references accesorio(idaccesorio) on delete cascade
