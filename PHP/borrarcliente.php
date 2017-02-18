@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrar</title>
-    <link rel="stylesheet" type="text/css" href="css/borrarcliente.css ">
+    <link rel="stylesheet" type="text/css" href="css/borrar.css ">
   </head>
   <body>
     <?php
@@ -25,7 +25,7 @@
       }
     ?>
 
-      <echo><p>cliente borrado</p></echo>
+      <echo><p>Cliente Borrado</p></echo>
 
       <form method="post">
       <input id="volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />

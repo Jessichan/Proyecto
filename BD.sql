@@ -58,7 +58,7 @@ create table accesorio
 (
 	idaccesorio		int auto_increment not null,
 	nombre			varchar(50),
-	descripcion		varchar(50),
+	descripcion		varchar(500),
 	cantidad		int,
 	precio			decimal(4,2),
 	imagen			varchar(500),

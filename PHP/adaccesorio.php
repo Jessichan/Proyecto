@@ -26,7 +26,6 @@
             echo "<th>Cantidad</th>";
             echo "<th>Precio</th>";
             echo "<th>Imagen</th>";
-            echo "<th>Añadir</th>";
             echo "<th>Modificar</th>";
             echo "<th>Borrar</th>";
             echo "</thead>";
@@ -49,9 +48,8 @@
               echo "<td>".$obj->cantidad."</td>";
               echo "<td>".$obj->precio."</td>";
               echo "<td>".$obj->imagen."</td>";
-              echo "<td><a href='añadiracces.php?id=".$obj->idaccesorio."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='editaracces.php?id=".$obj->idaccesorio."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
-              echo "<td><a href='borraracces.php?id=".$obj->idaccesorio."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='editaraccesorio.php?id=".$obj->idaccesorio."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='borraraccesorio.php?id=".$obj->idaccesorio."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }
 
@@ -64,5 +62,7 @@
       //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
 
     ?>
+  </table>
+  <input type="button" onclick=" location.href='/php/proyecto/agregaraccesorio.php' " value="Añadir Accesorio" style=cursor:pointer; name="boton" />
   </body>
 </html>

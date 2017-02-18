@@ -28,7 +28,6 @@
             echo "<th>Descripcion</th>";
             echo "<th>Precio</th>";
             echo "<th>Imagen</th>";
-            echo "<th>Añadir</th>";
             echo "<th>Modificar</th>";
             echo "<th>Borrar</th>";
             echo "</thead>";
@@ -53,9 +52,8 @@
               echo "<td>".$obj->descripcion."</td>";
               echo "<td>".$obj->precio."</td>";
               echo "<td>".$obj->imagen."</td>";
-              echo "<td><a href='añadirani.php?id=".$obj->idanimal."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='editarani.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
-              echo "<td><a href='borrarani.php?id=".$obj->idanimal."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='editaranimal.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='borraranimal.php?id=".$obj->idanimal."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }
 
@@ -68,5 +66,7 @@
       //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
 
     ?>
+  </table>
+  <input type="button" onclick=" location.href='/php/proyecto/agregaranimal.php' " value="Añadir Animal" style=cursor:pointer; name="boton" />
   </body>
 </html>

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrar</title>
+    <link rel="stylesheet" type="text/css" href="css/borrar.css ">
   </head>
   <body>
     <?php
@@ -20,19 +21,14 @@
 
        //MAKING A SELECT QUERY
       /* Consultas de selección que devuelven un conjunto de resultados */
-      $result = $connection->query("DELETE FROM animal where Idcanimal=$id");
-        if ($result) {
-          echo "<br>Borrado correctamente el animal con id ".$id;
-          echo "<br><br><a href='adanimal.php'><input type='submit' value='Refresh'></a>";
-          }else{
-            echo "<br>ID incorrecto.";
-          }
-
-
-
-
-      }
-
+      $result = $connection->query("DELETE FROM animal where Idanimal=$id");
+       }
     ?>
+
+      <echo><p>Animal Borrado</p></echo>
+
+      <form method="post">
+      <input id="volver" type="button" onclick=" location.href='/php/proyecto/adanimal.php' " value="Volver" style=cursor:pointer; name="boton" />
+      </form>
   </body>
 </html>
