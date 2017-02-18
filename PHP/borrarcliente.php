@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrar</title>
+    <link rel="stylesheet" type="text/css" href="css/borrarcliente.css ">
   </head>
   <body>
     <?php
@@ -18,21 +19,19 @@
               $id=$_GET['id'];
 
 
-       //MAKING A SELECT QUERY
+
       /* Consultas de selección que devuelven un conjunto de resultados */
       $result = $connection->query("DELETE FROM cliente where Idcliente=$id");
-        if ($result) {
-          echo "<br>Borrada correctamente el cliente con id ".$id;
-          echo "<br><br><a href='adcliente.php'><input type='submit' value='Refresh'></a>";
-          }else{
-            echo "<br>ID incorrecto.";
-          }
-
-
-
-
       }
-
     ?>
+
+      <echo><p>cliente borrado</p></echo>
+
+      <form method="post">
+      <input id="volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
+      </form>
+
+
+
   </body>
 </html>

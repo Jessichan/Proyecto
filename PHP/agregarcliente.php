@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passing info with POST and HTML FORMS using a single file.</title>
-    <link rel="stylesheet" type="text/css" href="css/agregarclien.css ">
+    <title>Agregar cliente</title>
+    <link rel="stylesheet" type="text/css" href="css/agregarcliente.css ">
     <style>
       span {
         width: 100px;
@@ -16,13 +16,13 @@
         <form method="post">
             <fieldset>
               <legend><h3>Cliente</h3></legend>
-            <span>Nombre:</span><input type="text" name="nombre" required><br>
-            <span>Apellidos:</span><input type="text" name="ape" required><br>
-            <span>Telefono:</span><input type="text" name="tel" required><br>
-            <span>Email:</span><input type="text" name="email" required><br>
-            <span>Usuario:</span><input type="text" name="usu" required><br>
-            <span>Tipo:</span><input type="text" name="tipo" required><br>
-            <span>Pasword:</span><input type="text" name="pass" required><br>
+            <span>Nombre:</span><input type="text" name="nombre" maxlength="25" required><br>
+            <span>Apellidos:</span><input type="text" name="ape" maxlength="50" required><br>
+            <span>Telefono:</span><input type="tel" name="tel" pattern="[0-9]{9}" required><br>
+            <span>Email:</span><input type="email" name="email" maxlength="100" required><br>
+            <span>Usuario:</span><input type="text" name="usu" maxlength="15" required><br>
+            <span>Tipo:</span><input type="text" name="tipo" maxlength="20" required><br>
+            <span>Pasword:</span><input type="text" name="pass" maxlength="50" required><br>
       <span><input id= "enviar" type="submit" value="Enviar"><br>
       <span><input id="volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
         </fieldset>

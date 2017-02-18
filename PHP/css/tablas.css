@@ -31,13 +31,13 @@ body{
 	background: #e4e0ea;
 }
 
-#volver {
+input[type="button"] {
   position: relative;
-  left: 110px;
-  top: -12px;
+  left: 205px;
+  top: -190px;
   border-radius: 8px;
-  background: #c9f;
-  padding: 5px 15px;
+  background: pink;
+  padding: 5px 5px;
   border: none;
   color: #666;
 }

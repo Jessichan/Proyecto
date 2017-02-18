@@ -53,8 +53,8 @@
               echo "<td>".$obj->usuario."</td>";
               echo "<td>".$obj->tipo."</td>";
               echo "<td>".$obj->password."</td>";
-              echo "<td><a href='editarclien.php?id=".$obj->idcliente."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
-              echo "<td><a href='borrarclien.php?id=".$obj->idcliente."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='editarcliente.php?id=".$obj->idcliente."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='borrarcliente.php?id=".$obj->idcliente."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }
 
@@ -68,7 +68,7 @@
 
     ?>
     </table>
-   <input type="button" onclick=" location.href='/php/proyecto/agregarclien.php' " value="Añadir Cliente" style=cursor:pointer; name="boton" />
+   <input type="button" onclick=" location.href='/php/proyecto/agregarcliente.php' " value="Añadir Cliente" style=cursor:pointer; name="boton" />
 
   </body>
 </html>
