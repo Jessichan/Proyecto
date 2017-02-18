@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GETTING DATA FROM A MYSQL DATABASE</title>
-    <link rel="stylesheet" href="css/taalquiler.css">
+    <link rel="stylesheet" href="css/tablaalquiler.css">
   </head>
   <body>
     <?php
@@ -23,7 +23,6 @@
             echo "<th>Idanimal</th>";
             echo "<th>Idalquiler</th>";
             echo "<th>Cantidad</th>";
-            echo "<th>Añadir</th>";
             echo "<th>Modificar</th>";
             echo "<th>Borrar</th>";
             echo "</thead>";
@@ -43,8 +42,7 @@
               echo "<td>".$obj->idanimal."</td>";
               echo "<td>".$obj->idalquiler."</td>";
               echo "<td>".$obj->cantidad."</td>";
-              echo "<td><a href='añadirtiene.php?id=".$obj->idanimal."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='modificartiene.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='editartiene.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
               echo "<td><a href='borrartiene.php?id=".$obj->idanimal."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }
@@ -58,5 +56,7 @@
       //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
 
     ?>
+  </table>
+   <input type="button" onclick=" location.href='/php/proyecto/agregartiene.php' " value="Añadir Tiene" style=cursor:pointer; name="boton" />
   </body>
 </html>
