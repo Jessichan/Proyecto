@@ -69,6 +69,5 @@
     ?>
     </table>
    <input type="button" onclick=" location.href='/php/proyecto/agregarcliente.php' " value="Añadir Cliente" style=cursor:pointer; name="boton" />
-
   </body>
 </html>

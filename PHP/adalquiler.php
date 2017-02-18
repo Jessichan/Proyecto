@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GETTING DATA FROM A MYSQL DATABASE</title>
-    <link rel="stylesheet" href="css/taalquiler.css">
+    <link rel="stylesheet" href="css/tablaalquiler.css">
   </head>
   <body>
     <?php
@@ -23,7 +23,6 @@
             echo "<th>Idalquiler</th>";
             echo "<th>Idcliente</th>";
             echo "<th>Fecha</th>";
-            echo "<th>Añadir</th>";
             echo "<th>Modificar</th>";
             echo "<th>Borrar</th>";
             echo "</thead>";
@@ -43,9 +42,8 @@
               echo "<td>".$obj->idalquiler."</td>";
               echo "<td>".$obj->idcliente."</td>";
               echo "<td>".$obj->fecha."</td>";
-              echo "<td><a href='añadiralqui.php?id=".$obj->idalquiler."'><img src='img/añadir.png' width='15px' height='15px'/></a></td>";
-              echo "<td><a href='editaralqui.php?id=".$obj->idalquiler."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
-              echo "<td><a href='borraralqui.php?id=".$obj->idalquiler."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
+              echo "<td><a href='editaralquiler.php?id=".$obj->idalquiler."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
+              echo "<td><a href='borraralquiler.php?id=".$obj->idalquiler."'><img src='img/borrar.png' width='15px' height='15px'/></a></td>";
               echo "</tr>";
           }
 
@@ -58,5 +56,7 @@
       //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
 
     ?>
+  </table>
+  <input type="button" onclick=" location.href='/php/proyecto/agregaralquiler.php' " value="Añadir Alquiler" style=cursor:pointer; name="boton" />
   </body>
 </html>
