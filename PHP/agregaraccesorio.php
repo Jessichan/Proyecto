@@ -30,7 +30,7 @@
 
         if (isset($_POST["nombre"])){
 
-           $consulta = "INSERT INTO animal VALUES(NULL,'".$_POST['nombre']."','".$_POST['descrip']."','".$_POST['cantidad']."','".$_POST['precio']."','".$_POST['img']."')";
+           $consulta = "INSERT INTO accesorio VALUES(NULL,'".$_POST['nombre']."','".$_POST['descrip']."','".$_POST['cantidad']."','".$_POST['precio']."','".$_POST['img']."')";
 
            $result = $connection->query($consulta);
 
