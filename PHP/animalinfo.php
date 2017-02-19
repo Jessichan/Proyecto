@@ -47,14 +47,22 @@
                     echo "<div id='foto'>";
                         echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
                     echo "</div>";
-                echo "<div id='info'>";
-                            echo "<p><b> </b>".$obj->nombre."</p>";
+                        echo "<div id='nombre'>";
+                            echo "<h2><b> </b>".$obj->nombre."</h2>";
+                        echo "</div>";
+                        echo "<div id='raza'>";
                             echo "<p><b> </b>".$obj->raza."</p>";
+                        echo "</div>";
+                        echo "<div id='edad'>";
                             echo "<p><b> </b>".$obj->edad."</p>";
-                            echo "<p><b></b>".$obj->descripcion."</p>";
-                            echo "<p><b> </b>".$obj->precio." €</p>";
-                echo "</div>";
-            echo "<input id='alquila' type='button' onclick=`location.href='/php/proyecto/alquiler.php'´ value='Alquilar' style=cursor:pointer; name='alquila'>";
+                        echo "</div>";
+                        echo "<div id='descripcion'>";
+                            echo "<p>".$obj->descripcion."</p>";
+                        echo "</div>";
+                        echo "<div id='precio'>";
+                            echo "<p><h1>".$obj->precio." €</h1>";
+                        echo "</div>";
+
         echo "</div>";
             }else
                 echo "Imposible conseguir los datos";
@@ -63,6 +71,6 @@
 
 
     ?>
-    <input  id="ac" type="button" onclick=" location.href='/php/proyecto/alquiler.php' " value="Alquilar" style=cursor:pointer; name="alquila" />
+    <input  id="alquiler" type="button" onclick=" location.href='/php/proyecto/alquiler.php' " value="Alquilar" style=cursor:pointer; name="alquila" />
 </body>
 </html>
