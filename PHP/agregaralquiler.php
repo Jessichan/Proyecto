@@ -27,7 +27,12 @@
         include_once "conec.php";
 
         if (isset($_POST["fecha"])){
-           $consulta = "INSERT INTO alquiler VALUES(NULL ,'".$_POST['id']."','".$_POST['fecha']."')";
+
+          $idcliente = $_POST['id'];
+          $fecha  = $_POST['fecha'];
+
+
+           $consulta = "INSERT INTO alquiler VALUES(NULL , '$idcliente', '$fecha');";
 
            $result = $connection->query($consulta);
 

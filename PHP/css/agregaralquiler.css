@@ -34,7 +34,7 @@ input[type="text"]{
 }
 
 input[type="date"]{
-	margin-top: px;
+	margin-top: 5px;
 	border-radius: 4px;
 	border: 1px solid #4b2e4aaa;
 }
