@@ -40,27 +40,36 @@
             if ($result){
                 $obj = $result->fetch_object();
         echo "<div id='caja'>";
+
                 echo "<input type='submit' name='desloguear' value='Desconectar'>";
 
                 echo "<p id=saludo> Hola, $nombreusu</p>";
 
-            echo "<div id='foto'>";
-                echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
-            echo "</div>";
-                echo "<div id='info'>";
-                echo "<p><b> </b>".$obj->nombre."</p>";
-                echo "<p><b> </b>".$obj->descripcion."</p>";
-                echo "<p><b> </b>".$obj->cantidad."</p>";
-                echo "<p><b> </b>".$obj->precio." €</p>";
-            echo "</div>";
+                echo "<div id='foto'>";
+                    echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
+                echo "</div>";
+                echo "<div id='nombre'>";
+                    echo "<h2><b> </b>".$obj->nombre."</h2>";
+                echo "</div>";
+                echo "<div id='descripcion'>";
+                    echo "<p><b> </b>".$obj->descripcion."</p>";
+                echo "</div>";
+                echo "<div id='cantidad'>";
+                    echo "<p><b> </b>".$obj->cantidad."</p>";
+                echo "</div>";
+                echo "<div id='precio'>";
+                    echo "<h1><b> </b>".$obj->precio." €</h1>";
+                echo "</div>";
+
         echo "</div>";
+
             }else
                 echo "Imposible conseguir los datos";
         }else
             echo "Query Failed";
 
-
     ?>
 
+ <input  id="comprar" type="button" onclick=" location.href='/php/proyecto/comprar.php' " value="Comprar" style=cursor:pointer; name="alquila" />
 </body>
 </html>
