@@ -1,4 +1,68 @@
 body{
 	background: #e4e0ea;
+	display: flex;
 }
 
+#uno img:hover{
+	width: 250px;
+	height: 250px;
+	transition: 250ms;
+	background: #F6798F80;
+}
+
+#uno{
+	position: absolute;
+	height: 250px;
+	margin-left: 210px;
+	margin-top: 40px;
+	transition: 250ms;
+	background: #E4E0EA;
+
+}
+
+
+#dos img:hover{
+	width: 250px;
+	height: 250px;
+	transition: 250ms;
+	background: #F6798F80;
+}
+
+#dos{
+	position: absolute;
+	height: 250px;
+	margin-left: 510px;
+	margin-top: 20px;
+}
+
+#tres img:hover{
+	width: 250px;
+	height: 250px;
+	transition: 250ms;
+	background: #F6798F80;
+}
+
+#tres{
+	position: absolute;
+	height: 250px;
+	margin-left: 820px;
+	margin-top: 10px;
+}
+#cliente{
+	position: absolute;
+	margin-top: 268px;
+	margin-left: 300px
+}
+
+#animales{
+	position: absolute;
+	margin-top: 270px;
+	margin-left: 600px
+}
+
+
+#accesorios{
+	position: absolute;
+	margin-top: 270px;
+	margin-left: 920px
+}

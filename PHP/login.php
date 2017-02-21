@@ -10,10 +10,17 @@
     <?php
         include_once "conec.php";
 
+
+
+        //Si el usuario esta logueado
+
+         session_start();
+
         if (isset($_POST["user"])) {
 
             $user  = $_POST['user'];
             $pass = $_POST['pass'];
+
 
             $login = "SELECT idcliente FROM cliente
                       WHERE usuario = ? AND
@@ -26,18 +33,16 @@
                 $query->bind_result($alguien);
                 $query->fetch();
 
-                echo $alguien;
-                if(!empty($alguien)){
-                    echo "Entra";
-                    session_start();
-                    $_SESSION["iduser"] = $alguien;
-                    header("Location: /php/proyecto/menu.php");
-                } else
-                     echo "Login no valido";
 
-                $query->close();
+                   if (isset($_SESSION['user']) && $_SESSION['tipo']=="Admin") {
+                            header('Location: administracion.php');
+                            } else {
+                            header('Location: menu.php');
+                            $query->close();
+                }
             }
         }
+
 
     ?>
 

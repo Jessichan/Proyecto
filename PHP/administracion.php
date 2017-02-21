@@ -23,14 +23,19 @@
  			?>
 
 
+ 	<div id="uno">
+		<a href='adcliente.php'><img src='img/clientes.png'/></a>
+	</div>
+	<div id="dos">
+		<a href='adanimal.php'><img src='img/animales.png'/></a>
+	</div>
+	<div id="tres">
+		<a href='adaccesorio.php'><img src='img/accesorios.png'/></a>
+	</div>
 
-<a href='adcliente.php'><img src='img/clientes.png' width='200px' height='200px'/></a>
-<a href='adanimal.php'><img src='img/animales.jpg' width='200px' height='200px'/></a>
-<a href='adaccesorio.php'><img src='img/accesorios.png' width='200px' height='200px'/></a>
-
-	<p>Clientes</p>
-	<p>Animales</p>
-	<p>Accesorios</p>
+	<p id="cliente">Clientes</p>
+	<p id="animales">Animales</p>
+	<p id="accesorios">Accesorios</p>
 
 </body>
 </html>
