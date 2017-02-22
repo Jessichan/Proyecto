@@ -1,3 +1,19 @@
+
+#saludo{
+
+    margin-left: 569px;
+    margin-top: -209px;
+}
+
+input[type=submit] {
+	margin-left: 660px;
+	background-color: #E94330;
+	border-color: firebrick;
+	margin-top: -5px;
+	cursor:pointer;
+	height: 22px;
+}
+
 body{
 	background: #e4e0ea;
 	display: flex;

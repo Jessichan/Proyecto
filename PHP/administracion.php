@@ -9,20 +9,39 @@
 	<?php
 
 		include_once "conec.php";
+ session_start();
+    if(isset($_POST["desloguear"])){
+      session_destroy();
+      header('Location: /php/proyecto/login.php');
+    }
 
-     		 session_start();
-    		if(isset($_POST["desloguear"])){
-      			session_destroy();
-      			header('Location: /php/proyecto/login.php');
-   			 }
+    if(isset($_SESSION["iduser"])){
+      	$nombreusu = "";
 
-   		 if(isset($_SESSION["iduser"])){
-     		 $username = "";
-     	}
+      		// Consigue nombre de usuario
+            $nombreusu = "SELECT nombre
+                         FROM cliente
+                         WHERE idcliente = {$_SESSION['iduser']}
+                        ";
 
+            if ($result = $connection->query($nombreusu)) {
+                if ($result->num_rows > 0)
+                    $nombreusu = $result->fetch_object()->nombre;
+                else
+                    echo "No se ha encontrado el nombre de usuario";
+            }else
+                echo "Wrong Query";
+     }
  			?>
 
 
+
+<div id="caja">
+        <form method="post" id="Desconectar">
+      <input type="submit" name="desloguear" value="Desconectar">
+        </form>
+        <?php echo "<p id=\"saludo\"> Hola, $nombreusu</p>" ?>
+</div>
  	<div id="uno">
 		<a href='adcliente.php'><img src='img/clientes.png'/></a>
 	</div>

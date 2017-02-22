@@ -10,19 +10,21 @@
     <?php
         include_once "conec.php";
 
-
-
         //Si el usuario esta logueado
-
-         session_start();
+        session_start();
+        if(isset($_SESSION['iduser'])){
+            if($_SESSION['tipouser'] == "Admin")
+                header('Location: administracion.php');
+            else if($_SESSION['tipouser'] == "User")
+                header('Location: menu.php');
+        }
 
         if (isset($_POST["user"])) {
-
-            $user  = $_POST['user'];
+            $user = $_POST['user'];
             $pass = $_POST['pass'];
 
-
-            $login = "SELECT idcliente FROM cliente
+            $login = "SELECT idcliente, tipo
+                      FROM cliente
                       WHERE usuario = ? AND
                             password = ?;
                      ";
@@ -30,16 +32,21 @@
 
                 $query->bind_param("ss", $user, $pass);
                 $query->execute();
-                $query->bind_result($alguien);
+                $query->bind_result($userID, $userTipo);
                 $query->fetch();
 
+                if(isset($userID)){
+                    $_SESSION['iduser'] = $userID;
+                    $_SESSION['tipouser'] = $userTipo;
 
-                   if (isset($_SESSION['user']) && $_SESSION['tipo']=="Admin") {
-                            header('Location: administracion.php');
-                            } else {
-                            header('Location: menu.php');
-                            $query->close();
+                    if ($userTipo == "Admin")
+                        header('Location: administracion.php');
+                    else if($userTipo == "User")
+                        header('Location: menu.php');
+                }else{
+                    echo "Login incorrecto";
                 }
+                $query->close();
             }
         }
 
