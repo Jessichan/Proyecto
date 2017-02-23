@@ -10,6 +10,12 @@
 		include_once "conec.php";
 
 	    session_start();
+
+       if(!isset($_SESSION['iduser'])){
+          header('Location: /php/proyecto/login.php');
+        }
+
+
     if(isset($_POST["desloguear"])){
       session_destroy();
       header('Location: /php/proyecto/login.php');

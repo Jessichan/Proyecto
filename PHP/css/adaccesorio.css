@@ -44,16 +44,16 @@ input[type="button"] {
 
 #saludo{
   width: 90px;
-    margin-left: 815px;
-    margin-top: -509px;
+    margin-left: 962px;
+    margin-top: -1070px;
 }
 
 input[type=submit] {
   position: absolute;
-  margin-left: 900px;
+  margin-left: 1050px;
   background-color: #C9F;
   border-color: #866899;
-  margin-top: -510px;
+  margin-top: -1070px;
   cursor:pointer;
   height: 22px;
 }

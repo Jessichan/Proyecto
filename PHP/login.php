@@ -12,6 +12,9 @@
 
         //Si el usuario esta logueado
         session_start();
+
+        //admin vaya a admin y user a menu
+
         if(isset($_SESSION['iduser'])){
             if($_SESSION['tipouser'] == "Admin")
                 header('Location: administracion.php');
@@ -19,6 +22,7 @@
                 header('Location: menu.php');
         }
 
+        //guardar sesion del usuario
         if (isset($_POST["user"])) {
             $user = $_POST['user'];
             $pass = $_POST['pass'];
@@ -28,6 +32,8 @@
                       WHERE usuario = ? AND
                             password = ?;
                      ";
+
+            //sql inyection
             if ($query = $connection->prepare($login)) {
 
                 $query->bind_param("ss", $user, $pass);

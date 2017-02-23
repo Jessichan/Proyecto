@@ -44,3 +44,19 @@ input[type="button"] {
   border: none;
   color: #666;
 }
+
+#saludo{
+  width: 90px;
+    margin-left: 650px;
+    margin-top: -450px;
+}
+
+input[type=submit] {
+  position: absolute;
+  margin-left: 740px;
+  background-color: #C9F;
+  border-color: #866899;
+  margin-top: -450px;
+  cursor:pointer;
+  height: 22px;
+}

@@ -7,21 +7,25 @@
 </head>
 <body>
 	<?php
-
 		include_once "conec.php";
- session_start();
+ 		session_start();
+
+      	$nombreusu = "";
+        if(!isset($_SESSION['iduser'])){
+      		header('Location: /php/proyecto/login.php');
+        }
+
     if(isset($_POST["desloguear"])){
       session_destroy();
       header('Location: /php/proyecto/login.php');
     }
 
     if(isset($_SESSION["iduser"])){
-      	$nombreusu = "";
 
       		// Consigue nombre de usuario
             $nombreusu = "SELECT nombre
                          FROM cliente
-                         WHERE idcliente = {$_SESSION['iduser']}
+                         WHERE idcliente = {$_SESSION['iduser']};
                         ";
 
             if ($result = $connection->query($nombreusu)) {
@@ -40,7 +44,7 @@
         <form method="post" id="Desconectar">
       <input type="submit" name="desloguear" value="Desconectar">
         </form>
-        <?php echo "<p id=\"saludo\"> Hola, $nombreusu</p>" ?>
+        <?php echo "<p id='saludo'> Hola, $nombreusu</p>" ?>
 </div>
  	<div id="uno">
 		<a href='adcliente.php'><img src='img/clientes.png' /></a>
@@ -54,11 +58,19 @@
 	<div id="cuatro">
 		<a href='adalquiler.php'><img src='img/alquiler.png' width="230"px height="230"px/></a>
 	</div>
+	<div id="cinco">
+		<a href='adcompra.php'><img src='img/compra.png' width="230"px height="230"px/></a>
+	</div>
+	<div id="seis">
+		<a href='adtiene.php'><img src='img/tiene.png' width="230"px height="230"px/></a>
+	</div>
 
 	<p id="cliente">Clientes</p>
 	<p id="animales">Animales</p>
 	<p id="accesorios">Accesorios</p>
 	<p id="alquiler">Alquiler</p>
+	<p id="compra">Compra</p>
+	<p id="tiene">Tiene</p>
 
 </body>
 </html>

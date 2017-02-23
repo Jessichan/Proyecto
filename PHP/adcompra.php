@@ -11,6 +11,37 @@
 
        include_once "conec.php";
 
+       session_start();
+
+        //no entrar en nada si no estas logueado
+
+       if(!isset($_SESSION['iduser'])){
+          header('Location: /php/proyecto/login.php');
+        }
+
+         if(isset($_POST["desloguear"])){
+          session_destroy();
+          header('Location: /php/proyecto/login.php');
+      }
+
+      if(isset($_SESSION["iduser"])){
+          $nombreusu = "";
+
+          // Consigue nombre de usuario
+            $nombreusu = "SELECT nombre
+                         FROM cliente
+                         WHERE idcliente = {$_SESSION['iduser']}
+                        ";
+
+            if ($result = $connection->query($nombreusu)) {
+                if ($result->num_rows > 0)
+                    $nombreusu = $result->fetch_object()->nombre;
+                else
+                    echo "No se ha encontrado el nombre de usuario";
+            }else
+                echo "Wrong Query";
+      }
+
       //MAKING A SELECT QUERY
       /* Consultas de selección que devuelven un conjunto de resultados */
       if ($result = $connection->query("SELECT * FROM compra;")) {
@@ -60,5 +91,10 @@
     ?>
   </table>
   <input type="button" onclick=" location.href='/php/proyecto/agregarcompra.php' " value="Añadir Compra" style=cursor:pointer; name="boton" />
+
+  <form method="post" id="Desconectar">
+      <input type="submit" name="desloguear" value="Desconectar">
+        </form>
+        <?php echo "<p id='saludo'> Hola, $nombreusu</p>" ?>
   </body>
 </html>
