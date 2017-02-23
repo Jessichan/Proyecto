@@ -98,15 +98,15 @@
 
         //consulta
         $consulta="UPDATE  cliente SET
-        'id' =  '$id',
-        'nombre' =  '$nombre',
-        'ape' =  '$apellidos',
-        'tfono' =  '$telefono',
-        'email' =  '$email',
-        'user' =  '$usuario',
-        'tipo' = '$tipo',
-        'pass' = md5('$password'),
-        WHERE  `id` =$idcliente;";
+        id =  '$id',
+        nombre =  '$nombre',
+        ape =  '$apellidos',
+        tfono =  '$telefono',
+        email =  '$email',
+        user =  '$usuario',
+        tipo = '$tipo',
+        pass = md5('$password'),
+        WHERE  'id' =$idcliente;";
 
 
         if ($result = $connection->query($consulta))

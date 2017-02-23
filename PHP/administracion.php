@@ -43,18 +43,22 @@
         <?php echo "<p id=\"saludo\"> Hola, $nombreusu</p>" ?>
 </div>
  	<div id="uno">
-		<a href='adcliente.php'><img src='img/clientes.png'/></a>
+		<a href='adcliente.php'><img src='img/clientes.png' /></a>
 	</div>
 	<div id="dos">
-		<a href='adanimal.php'><img src='img/animales.png'/></a>
+		<a href='adanimal.php'><img src='img/animales.png' width="220"px height="230"px/></a>
 	</div>
 	<div id="tres">
-		<a href='adaccesorio.php'><img src='img/accesorios.png'/></a>
+		<a href='adaccesorio.php'><img src='img/accesorios.png' width="230"px height="230"px/></a>
+	</div>
+	<div id="cuatro">
+		<a href='adalquiler.php'><img src='img/alquiler.png' width="230"px height="230"px/></a>
 	</div>
 
 	<p id="cliente">Clientes</p>
 	<p id="animales">Animales</p>
 	<p id="accesorios">Accesorios</p>
+	<p id="alquiler">Alquiler</p>
 
 </body>
 </html>
