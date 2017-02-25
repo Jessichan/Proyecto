@@ -50,7 +50,7 @@ create table tiene
 	idalquiler		int,
 	cantidad		int,
 	primary key(idanimal, idalquiler),
-	foreign key(idanimal) references animal(idanimal),
+	foreign key(idanimal) references animal(idanimal) on delete cascade,
 	foreign key(idalquiler) references alquiler(idalquiler) on delete cascade
 );
 
@@ -72,7 +72,7 @@ create table compra
 	cantidad 		int,
 	preciototal		decimal(4,2),
 	primary key(idcliente, idaccesorio),
-	foreign key(idcliente) references cliente(idcliente),
+	foreign key(idcliente) references cliente(idcliente) on delete cascade,
 	foreign key(idaccesorio) references accesorio(idaccesorio) on delete cascade
 );
 
