@@ -10,6 +10,7 @@
 		include_once "conec.php";
  		session_start();
 
+ 		//si no estas logueado redirecciona a login
       	$nombreusu = "";
         if(!isset($_SESSION['iduser'])){
       		header('Location: /php/proyecto/login.php');
@@ -19,6 +20,15 @@
       session_destroy();
       header('Location: /php/proyecto/login.php');
     }
+
+    //evitar que administrador acceda a paginas de usuario
+    if(isset($_SESSION["iduser"])){
+            if($_SESSION["tipouser"] != "Admin"){
+              session_destroy();
+        header('Location: login.php');
+            }
+    }else
+      header('Location: login.php');
 
     if(isset($_SESSION["iduser"])){
 
@@ -59,7 +69,7 @@
 		<a href='adalquiler.php'><img src='img/alquiler.png' width="230"px height="230"px/></a>
 	</div>
 	<div id="cinco">
-		<a href='adcompra.php'><img src='img/compra.png' width="230"px height="230"px/></a>
+		<a href='adcompra.php'><img src='img/compra.png' width="210"px height="210"px/></a>
 	</div>
 	<div id="seis">
 		<a href='adtiene.php'><img src='img/tiene.png' width="230"px height="230"px/></a>

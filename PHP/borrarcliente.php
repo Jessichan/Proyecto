@@ -11,6 +11,23 @@
 
         include_once "conec.php";
 
+        session_start();
+
+        //si no estas logueado redirecciona a login
+        $nombreusu = "";
+        if(!isset($_SESSION['iduser'])){
+            header('Location: /php/proyecto/login.php');
+        }
+
+        //evitar que administrador acceda a paginas de usuario
+        if(isset($_SESSION["iduser"])){
+            if($_SESSION["tipouser"] != "Admin"){
+              session_destroy();
+            header('Location: login.php');
+            }
+        }else
+        header('Location: login.php');
+
 
         if (!empty($_GET)) {
             $id="";

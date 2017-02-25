@@ -21,6 +21,15 @@
           header('Location: /php/proyecto/login.php');
         }
 
+        //evita que usuario acceda a paginas de admin
+        if(isset($_SESSION["iduser"])){
+            if($_SESSION["tipouser"] != "User"){
+              session_destroy();
+        header('Location: login.php');
+            }
+    }else
+        header('Location: login.php');
+
         if(isset($_SESSION["iduser"])){
             $nombreusu = "";
 

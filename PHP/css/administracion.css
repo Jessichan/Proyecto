@@ -87,8 +87,8 @@ body{
 }
 
 #cinco img:hover{
-	width: 225px;
-	height: 229px;
+	width: 210px;
+	height: 210px;
 	padding: 15px;
 	transition: 250ms;
 	background: #F6798F80;
@@ -148,7 +148,7 @@ body{
 
 #compra{
 	position: absolute;
-	margin-top: 580px;
+	margin-top: 568px;
 	margin-left: 630px
 }
 

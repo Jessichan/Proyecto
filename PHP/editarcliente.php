@@ -8,6 +8,24 @@
     <?php
        include_once "conec.php";
 
+       session_start();
+
+        //si no estas logueado redirecciona a login
+        $nombreusu = "";
+        if(!isset($_SESSION['iduser'])){
+            header('Location: /php/proyecto/login.php');
+        }
+
+        //evitar que administrador acceda a paginas de usuario
+        if(isset($_SESSION["iduser"])){
+            if($_SESSION["tipouser"] != "Admin"){
+              session_destroy();
+            header('Location: login.php');
+            }
+        }else
+        header('Location: login.php');
+
+
         if(!$_GET['id'])
             header("Location: adcliente.php");
 
@@ -97,17 +115,22 @@
         $password=$_POST['pass'];
 
         //consulta
-        $consulta="UPDATE  cliente SET
-        id =  '$id',
-        nombre =  '$nombre',
-        ape =  '$apellidos',
-        tfono =  '$telefono',
-        email =  '$email',
-        user =  '$usuario',
-        tipo = '$tipo',
-        pass = md5('$password'),
-        WHERE  'id' =$idcliente;";
+         if ($result = $connection->query("DELETE * FROM cliente WHERE idcliente = $id")){
+                if ($result == false)
+                    echo "error: imposible eliminar cliente";
+         }else
+            echo "consulta invalida";
 
+
+        $consulta = "INSERT INTO cliente VALUES(NULL, '$nombre', '$apellidos', '$telefono', '$email', '$usuario', '$tipo', '$pass');";
+
+           $result = $connection->query($consulta);
+
+           if (!$result)
+                echo "Query Error";
+           else
+               echo "cliente añadido";
+        }
 
         if ($result = $connection->query($consulta))
 

@@ -24,6 +24,15 @@
           header('Location: /php/proyecto/login.php');
       }
 
+    //evitar que administrador acceda a paginas de usuario
+    if(isset($_SESSION["iduser"])){
+            if($_SESSION["tipouser"] != "Admin"){
+              session_destroy();
+        header('Location: login.php');
+            }
+    }else
+      header('Location: login.php');
+
       if(isset($_SESSION["iduser"])){
           $nombreusu = "";
 
@@ -91,6 +100,7 @@
     ?>
   </table>
   <input type="button" onclick=" location.href='/php/proyecto/agregarcompra.php' " value="Añadir Compra" style=cursor:pointer; name="boton" />
+  <input type="button" onclick=" location.href='/php/proyecto/administracion.php' " value="Administración" style=cursor:pointer; name="boton1" />
 
   <form method="post" id="Desconectar">
       <input type="submit" name="desloguear" value="Desconectar">
