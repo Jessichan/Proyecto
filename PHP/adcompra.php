@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GETTING DATA FROM A MYSQL DATABASE</title>
-    <link rel="stylesheet" href="css/adalquiler.css">
+    <link rel="stylesheet" href="css/adcompra.css">
   </head>
   <body>
     <?php

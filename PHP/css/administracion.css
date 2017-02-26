@@ -104,9 +104,9 @@ body{
 }
 
 #seis img:hover{
-	width: 225px;
-	height: 229px;
-	padding: 15px;
+	width: 210px;
+	height: 210px;
+	padding: 16px;
 	transition: 250ms;
 	background: #F6798F80;
 }
@@ -154,6 +154,6 @@ body{
 
 #tiene{
 	position: absolute;
-	margin-top: 590px;
+	margin-top: 573px;
 	margin-left: 940px
 }

@@ -70,7 +70,7 @@
                     echo "<p><b> </b>".$obj->descripcion."</p>";
                 echo "</div>";
                 echo "<div id='cantidad'>";
-                    echo "<p><b> </b>".$obj->cantidad."</p>";
+                    echo "<p><b> </b>".$obj->cantidad." Unidades</p>";
                 echo "</div>";
                 echo "<div id='precio'>";
                     echo "<h1><b> </b>".$obj->precio." €</h1>";

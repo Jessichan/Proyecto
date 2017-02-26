@@ -58,8 +58,6 @@
 
            if (!$result)
               echo "Query Error";
-           else
-               echo "Tiene añadido";
         }
     ?>
 </body>

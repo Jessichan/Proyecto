@@ -60,8 +60,6 @@
 
             if (!$result)
                 echo "Query Error";
-            else
-                echo "compra añadida";
         }
     ?>
 </body>

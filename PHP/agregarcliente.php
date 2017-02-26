@@ -67,8 +67,6 @@
 
       	   if (!$result)
        		    echo "Query Error";
-           else
-               echo "cliente añadido";
         }
     ?>
 </body>

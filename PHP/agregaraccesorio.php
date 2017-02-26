@@ -90,8 +90,6 @@
 
                  if (!$result)
                      echo "Query Error";
-                 else
-                     echo "Accesorio añadido";
             }
 
         }

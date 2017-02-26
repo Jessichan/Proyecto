@@ -97,8 +97,6 @@
 
                 if (!$result)
                    echo "Query Error";
-                else
-                   echo "animal añadido";
             }
         }
     ?>
