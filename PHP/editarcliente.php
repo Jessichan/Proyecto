@@ -1,7 +1,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Show Vehicles</title>
+    <title>Modificar</title>
+    <link rel="stylesheet" type="text/css" href="css/editarcliente.css">
+    <style>
+        span {
+            width: 100px;
+            display: inline-block;
+            }
+    </style>
 </head>
 <body>
 
@@ -62,89 +69,51 @@
     ?>
 
 
-        <form method="post">
-            <div>
-                <label>Id</label>
-                <input name="id" type="text" value="<?php echo $clienteid; ?>" maxlength="25" required>
-            </div>
-            <div>
-                <label>Nombre</label>
-                <input name="nombre" type="text" value="<?php echo $clientenombre; ?>" maxlength="25" required>
-            </div>
-            <div>
-
-                <label>Apellidos</label>
-                <input name="ape" type="text" value="<?php echo  $clienteapellido; ?>" maxlength="50" required>
-            </div>
-            <div>
-                <label>Telefono</label>
-                <input name="tfono" type="tel" value="<?php echo $clientetelefono; ?>" pattern="[0-9]{9}" required>
-            </div>
-            <div>
-                <label>Email</label>
-                <input name="email" type="email" value="<?php echo $clienteemail; ?>" maxlength="100" required>
-            </div>
-            <div>
-                <label>Usuario</label>
-                <input name="user" type="text" value="<?php echo  $clienteusuario; ?>" maxlength="15" required>
-            </div>
-             <div>
-                <label>Tipo</label>
-                <input name="tipo" type="text" value="<?php echo  $clientetipo; ?>" maxlength="15" required>
-            </div>
-            <div>
-                <label>Password</label>
-                <input name="pass" type="password" value="<?php echo $clientepassword; ?>" maxlength="50" required>
-            </div>
-            <input type="submit" value="Modificar">
-        </form>
-
+    <form method="post">
+        <fieldset>
+            <legend><h3>Cliente</h3></legend>
+            <span>Id:</span><input name="id" type="text" value="<?php echo $clienteid; ?>" maxlength="25" required><br>
+            <span>Nombre:</span><input name="nombre" type="text" value="<?php echo $clientenombre; ?>" maxlength="25" required><br>
+            <span>Apellidos:</span><input name="ape" type="text" value="<?php echo  $clienteapellido; ?>" maxlength="50" required>
+            <span>Telefono:</span><input name="tfono" type="tel" value="<?php echo $clientetelefono; ?>" pattern="[0-9]{9}" required>
+            <span>Email:</span><input name="email" type="email" value="<?php echo $clienteemail; ?>" maxlength="100" required>
+            <span>Usuario:</span><input name="user" type="text" value="<?php echo  $clienteusuario; ?>" maxlength="15" required><br>
+            <span>Tipo:</span><input name="tipo" type="text" value="<?php echo  $clientetipo; ?>" maxlength="15" required><br>
+            <span>Password:</span> <input name="pass" type="password" value="<?php echo $clientepassword; ?>" maxlength="50" required><br>
+            <span><input id= "Modificar" type="submit" value="Modificar"></span><br>
+            <span><input id="Volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
+            </span>
+        </fieldset>
+    </form>
 
  <?php
 
-        if (isset($_POST['id'])) {
+    // Editar Clientes cuando se haya enviado por POST el ID
+    if (isset($_POST['id'])) {
 
-        //variables
-        $id=$_POST['id'];
-        $nombre=$_POST['nombre'];
-        $apellidos=$_POST['ape'];
-        $telefono=$_POST['tfono'];
-        $email=$_POST['email'];
-        $usuario=$_POST['user'];
-        $tipo=$_POST['tipo'];
-        $password=$_POST['pass'];
+        $id        = $_POST['id'];
+        $nombre    = $_POST['nombre'];
+        $apellidos = $_POST['ape'];
+        $telefono  = $_POST['tfono'];
+        $email     = $_POST['email'];
+        $usuario   = $_POST['user'];
+        $tipo      = $_POST['tipo'];
+        $password  = $_POST['pass'];
 
-        //consulta
-         if ($result = $connection->query("DELETE * FROM cliente WHERE idcliente = $id")){
-                if ($result == false)
-                    echo "error: imposible eliminar cliente";
-         }else
+        // 1. Eliminar
+        if ($result = $connection->query("DELETE FROM cliente WHERE idcliente = $id;")){
+            if ($result == false)
+                echo "error: imposible eliminar cliente";
+        }else
             echo "consulta invalida";
 
+        // 2. Agregar
+        $consulta = "INSERT INTO cliente VALUES($id, '$nombre', '$apellidos', '$telefono', '$email', '$usuario', '$tipo', '$password');";
 
-        $consulta = "INSERT INTO cliente VALUES(NULL, '$nombre', '$apellidos', '$telefono', '$email', '$usuario', '$tipo', '$pass');";
-
-           $result = $connection->query($consulta);
-
-           if (!$result)
-                echo "Query Error";
-           else
-               echo "cliente añadido";
-        }
-
-        if ($result = $connection->query($consulta))
-
-           {
-          header ("Location: editarcliente.php");
-        } else {
-
-              echo "Error: " . $result . "<br>" . mysqli_error($connection);
-        }
-      }
-
-
-
-        ?>
-
+        $result = $connection->query($consulta);
+        if (!$result)
+            echo "Query Error";
+    }
+?>
 </body>
 </html>

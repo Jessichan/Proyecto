@@ -47,13 +47,13 @@ input[type="button"] {
 
 #saludo{
   width: 90px;
-    margin-left: 650px;
+    margin-left: 570px;
     margin-top: -450px;
 }
 
 input[type=submit] {
   position: absolute;
-  margin-left: 740px;
+  margin-left: 660px;
   background-color: #C9F;
   border-color: #866899;
   margin-top: -450px;

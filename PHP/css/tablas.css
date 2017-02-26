@@ -43,9 +43,9 @@ input[type="button"] {
 }
 
 #saludo{
-  width: 90px;
+    width: 90px;
     margin-left: 815px;
-    margin-top: -509px;
+    margin-top: -460px;
 }
 
 input[type=submit] {
@@ -53,7 +53,7 @@ input[type=submit] {
   margin-left: 900px;
   background-color: #C9F;
   border-color: #866899;
-  margin-top: -510px;
+  margin-top: -460px;
   cursor:pointer;
   height: 22px;
 }

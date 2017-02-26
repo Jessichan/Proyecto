@@ -1,7 +1,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Show Vehicles</title>
+    <title>Modificar</title>
+     <link rel="stylesheet" type="text/css" href="css/editaranimal.css ">
+    <style>
+        span {
+            width: 100px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
 
@@ -41,7 +48,7 @@
         $animalimagen;
 
         if ($result = $connection->query("SELECT * FROM animal WHERE idanimal = $idanimal")){
-        // if ($result = $connection->query("SELECT * FROM cliente WHERE idcliente = 1")){
+
 
             if($result->num_rows > 0){
                 $valor = $result->fetch_object();
@@ -55,50 +62,60 @@
                 $animalprecio = $valor->precio;
                 $animalimagen = $valor->imagen;
             }else
-                echo "No clients found.";
+                echo "No animales encontrados.";
         }else
             echo "<br><br>Query wrong.";
 
     ?>
 
 
+    <form method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend><h3>Animal</h3></legend>
+            <span>Id:</span><input name="id" type="text" value="<?php echo $animalid; ?>" maxlength="11" required><br>
+            <span>Especie:</span><input name="especie" type="text" value="<?php echo $animalespecie; ?>" maxlength="20" required><br>
+            <span>Nombre:</span><input name="nombre" type="text" value="<?php echo  $animalnombre; ?>" maxlength="25" required><br>
+            <span>Raza:</span><input name="raza" type="text" value="<?php echo $animalraza; ?>" maxlength="50" required><br>
+            <span>Edad:</span><input name="edad" type="text" value="<?php echo $animaledad; ?>" maxlength="10" required><br>
+            <span>Descripcion:</span><input name="des" type="text" value="<?php echo  $animaldescripcion; ?>" maxlength="500" required><br>
+            <span>Precio:</span><input name="precio" type="decimal" value="<?php echo $animalprecio; ?>" maxlength="5,2" required><br>
+            <span>Imagen:</span><input name="image" type="text" value="<?php echo $animalimagen; ?>" maxlength="50"><br>
+            <span><input id= "Modificar" type="submit" value="Modificar"></span><br>
+            <span><input id="Volver" type="button" onclick=" location.href='/php/proyecto/adanimal.php' " value="Volver" style=cursor:pointer; name="boton" />
+            </span>
+        </fieldset>
+    </form>
 
-        <form method="post">
-            <div>
-                <label>Id</label>
-                <input name="id" type="text" value="<?php echo $animalid; ?>" maxlength="11" required>
-            </div>
-            <div>
-                <label>Especie</label>
-                <input name="esp" type="text" value="<?php echo $animalespecie; ?>" maxlength="20" required>
-            </div>
-            <div>
+     <?php
 
-                <label>Nombre</label>
-                <input name="nom" type="text" value="<?php echo  $animalnombre; ?>" maxlength="25" required>
-            </div>
-            <div>
-                <label>Raza</label>
-                <input name="raza" type="text" value="<?php echo $animalraza; ?>" maxlength="50" required>
-            </div>
-            <div>
-                <label>Edad</label>
-                <input name="edad" type="text" value="<?php echo $animaledad; ?>" maxlength="10" required>
-            </div>
-            <div>
-                <label>Descripcion</label>
-                <input name="des" type="text" value="<?php echo  $animaldescripcion; ?>" maxlength="500" required>
-            </div>
-            <div>
-                <label>Precio</label>
-                <input name="precio" type="text" value="<?php echo $animalprecio; ?>" maxlength="6" required>
-            </div>
-             <div>
-                <label>Imagen</label>
-                <input name="text" type="text" value="<?php echo $animalimagen; ?>" maxlength="50" required>
-            </div>
-            <input type="submit" value="Modificar">
-        </form>
+        // Editar Clientes cuando se haya enviado por POST el ID
+        if (isset($_POST['id'])) {
+
+
+        $id          = $_POST['id'];
+        $especie     = $_POST['especie'];
+        $nombre      = $_POST['nombre'];
+        $raza        = $_POST['raza'];
+        $edad        = $_POST['edad'];
+        $descripcion = $_POST['des'];
+        $precio      = $_POST['precio'];
+        $imagen      = $_POST['image'];
+
+        // 1. Eliminar
+         if ($result = $connection->query("DELETE FROM animal WHERE idanimal = $id")){
+                if ($result == false)
+                    echo "error: imposible eliminar animal";
+         }else
+            echo "consulta invalida";
+
+        // 2. Agregar
+        $consulta = "INSERT INTO animal VALUES($id, '$especie', '$nombre', '$raza', '$edad', '$descripcion', '$precio', '$imagen');";
+
+           $result = $connection->query($consulta);
+           if (!$result)
+                echo "Query Error";
+        }
+        ?>
 
 </body>
 </html>
