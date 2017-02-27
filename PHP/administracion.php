@@ -72,7 +72,7 @@
 		<a href='adcompra.php'><img src='img/compra.png' width="210"px height="210"px/></a>
 	</div>
 	<div id="seis">
-		<a href='adtiene.php'><img src='img/tiene.png' width="220"px height="220"px/></a>
+		<a href='adtiene.php'><img src='img/tiene.png' width="210"px height="210"px/></a>
 	</div>
 
 	<p id="cliente">Clientes</p>
