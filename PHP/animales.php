@@ -82,7 +82,7 @@
         </form>
         <?php echo "<p id=\"saludo\"> Hola, $nombreusu</p>" ?>
         <br>
-
+  <input id="volver" type="button" onclick=" location.href='/php/proyecto/menu.php' " value="Volver" style=cursor:pointer; name="boton" />
 		<div id="contenido">
 			<?php
 				for($i=0;$i<count($nombreanimal);$i++){
@@ -96,6 +96,7 @@
 				}
 			?>
 		</div>
+    <input id="volver" type="button" onclick=" location.href='/php/proyecto/menu.php' " value="Volver" style=cursor:pointer; name="boton" />
     </div>
 </body>
 </html>

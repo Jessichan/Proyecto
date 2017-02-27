@@ -12,12 +12,27 @@
 
 input[type=submit] {
 	margin-left: 930px;
-	background-color: #E94330;
-	border-color: firebrick;
+	background: #e94330;
+	color: #efedf0;
+	border-radius: 8px;
+	border: none;
 	margin-top: -30px;
+	height: 22px;
 	cursor:pointer;
 }
 
+#volver {
+	position: absolute;
+	margin-left: 20px;
+	background: #e94330;
+	color: #efedf0;
+	border-radius: 8px;
+	border: none;
+	margin-top: -50px;
+	padding:  5px;
+	width: 60px;
+	cursor:pointer;
+}
 
 body{
 	background: #c63a3a;
@@ -82,9 +97,6 @@ img{
 	height: 140px;
 	border-radius: 3px;
 }
-
-
-
 
 #contenido .animal h3{
  	margin-top: 5px;

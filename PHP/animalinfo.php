@@ -86,6 +86,7 @@
 
 
     ?>
+     <input id="volver" type="button" onclick=" location.href='/php/proyecto/animales.php' " value="Volver" style=cursor:pointer; name="boton" />
     <input  id="alquiler" type="button" onclick=" location.href='/php/proyecto/alquiler.php' " value="Alquilar" style=cursor:pointer; name="alquila" />
 </body>
 </html>

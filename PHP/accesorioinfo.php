@@ -9,8 +9,9 @@
     <?php
         include_once "conec.php";
 
-        session_start();
+        $precioAccesorioActual;
 
+        session_start();
          if(!isset($_SESSION['iduser'])){
             header('Location: /php/proyecto/login.php');
         }
@@ -54,37 +55,51 @@
         if ($result = $connection->query($infoacces)) {
             if ($result){
                 $obj = $result->fetch_object();
-        echo "<div id='caja'>";
+                echo "<div id='caja'>";
 
-                echo "<input type='submit' name='desloguear' value='Desconectar'>";
+                        echo "<input type='submit' name='desloguear' value='Desconectar'>";
 
-                echo "<p id=saludo> Hola, $nombreusu</p>";
+                        echo "<p id=saludo> Hola, $nombreusu</p>";
 
-                echo "<div id='foto'>";
-                    echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
-                echo "</div>";
-                echo "<div id='nombre'>";
-                    echo "<h2><b> </b>".$obj->nombre."</h2>";
-                echo "</div>";
-                echo "<div id='descripcion'>";
-                    echo "<p><b> </b>".$obj->descripcion."</p>";
-                echo "</div>";
-                echo "<div id='cantidad'>";
-                    echo "<p><b> </b>".$obj->cantidad." Unidades</p>";
-                echo "</div>";
-                echo "<div id='precio'>";
-                    echo "<h1><b> </b>".$obj->precio." €</h1>";
-                echo "</div>";
+                        echo "<div id='foto'>";
+                            echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
+                        echo "</div>";
+                        echo "<div id='nombre'>";
+                            echo "<h2><b> </b>".$obj->nombre."</h2>";
+                        echo "</div>";
+                        echo "<div id='descripcion'>";
+                            echo "<p><b> </b>".$obj->descripcion."</p>";
+                        echo "</div>";
+                        echo "<div id='cantidad'>";
+                            echo "<p><b> </b>".$obj->cantidad." Unidades</p>";
+                        echo "</div>";
+                        echo "<div id='precio'>";
+                            echo "<h1><b> </b>".$obj->precio." €</h1>";
+                        echo "</div>";
 
-        echo "</div>";
-
+                echo "</div>";
+                $precioAccesorioActual = $obj->precio;
             }else
                 echo "Imposible conseguir los datos";
         }else
             echo "Query Failed";
 
+        if(isset($_POST['comprar'])){
+            $insertar = "INSERT INTO compra
+                         VALUES ({$_SESSION['iduser']}, {$_GET['id']}, 1, $precioAccesorioActual);
+                        ";
+
+            if ($result = $connection->query($insertar)) {
+                if (!$result)
+                    echo "Erro al comprar accesorio (insertar en tabla compra).";
+            }else
+                echo "Consulta errónea";
+        }
     ?>
 
- <input  id="comprar" type="button" onclick=" location.href='/php/proyecto/comprar.php' " value="Comprar" style=cursor:pointer; name="alquila" />
+    <input id="volver" type="button" onclick=" location.href='/php/proyecto/accesorios.php' " value="Volver" style=cursor:pointer; name="boton" />
+    <form method="post">
+        <input  id="comprar" type="submit" value="Comprar" style="cursor:pointer;" name="comprar" />
+    </form>
 </body>
 </html>
