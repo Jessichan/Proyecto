@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Info de Animal</title>
+    <title>Info de Accesorio</title>
     <link rel="stylesheet" href="css/accesorioinfo.css">
 </head>
 <body>

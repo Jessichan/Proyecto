@@ -9,6 +9,8 @@
     <?php
         include_once "conec.php";
 
+
+
         session_start();
 
          if(!isset($_SESSION['iduser'])){
@@ -54,39 +56,95 @@
         if ($result = $connection->query($infoanimal)) {
             if ($result){
                 $obj = $result->fetch_object();
-        echo "<div id='caja'>";
-                echo "<input type='submit' name='desloguear' value='Desconectar'>";
+                echo "<div id='caja'>";
+                        echo "<input type='submit' name='desloguear' value='Desconectar'>";
 
-                echo "<p id=saludo> Hola, $nombreusu</p>";
+                        echo "<p id=saludo> Hola, $nombreusu</p>";
 
-                    echo "<div id='foto'>";
-                        echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
-                    echo "</div>";
-                        echo "<div id='nombre'>";
-                            echo "<h2><b> </b>".$obj->nombre."</h2>";
-                        echo "</div>";
-                        echo "<div id='raza'>";
-                            echo "<p><b> </b>".$obj->raza."</p>";
-                        echo "</div>";
-                        echo "<div id='edad'>";
-                            echo "<p><b> </b>".$obj->edad."</p>";
-                        echo "</div>";
-                        echo "<div id='descripcion'>";
-                            echo "<p>".$obj->descripcion."</p>";
-                        echo "</div>";
-                        echo "<div id='precio'>";
-                            echo "<p><h1>".$obj->precio." €</h1>";
-                        echo "</div>";
+                            echo "<div id='foto'>";
+                                echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
+                            echo "</div>";
+                                echo "<div id='nombre'>";
+                                    echo "<h2><b> </b>".$obj->nombre."</h2>";
+                                echo "</div>";
+                                echo "<div id='raza'>";
+                                    echo "<p><b> </b>".$obj->raza."</p>";
+                                echo "</div>";
+                                echo "<div id='edad'>";
+                                    echo "<p><b> </b>".$obj->edad."</p>";
+                                echo "</div>";
+                                echo "<div id='descripcion'>";
+                                    echo "<p>".$obj->descripcion."</p>";
+                                echo "</div>";
+                                echo "<div id='precio'>";
+                                    echo "<p><h1>".$obj->precio." €</h1>";
+                                echo "</div>";
 
-        echo "</div>";
+                echo "</div>";
+                $alquiler = "SELECT * FROM alquiler WHERE idalquiler = {$_GET['id']};";
             }else
                 echo "Imposible conseguir los datos";
         }else
             echo "Query Failed";
 
+        if(isset($_POST['alquiler'])){
+            $alquilerCorrecto = true;
+
+            // 1. Insertar en tabla Alquiler
+            $fecha = date('Y-m-d');
+            $insertar = "INSERT INTO alquiler
+                         VALUES (NULL, {$_SESSION['iduser']}, '$fecha');
+                        ";
+            if ($result = $connection->query($insertar)) {
+                if (!$result){
+                    echo "Error al alquilar animal (insertar en tabla alquiler).";
+                    $alquilerCorrecto = false;
+                }
+            }else
+                echo "Consulta errónea";
+
+            // 2. Obtener el ID de alquiler insertado en la consulta anterior
+            $alquilerID;
+            $conseguirIDAlquiler = "SELECT AUTO_INCREMENT
+                                    FROM information_schema.tables
+                                    WHERE table_name = 'alquiler' AND
+                                    table_schema = 'animalshop';
+                                   ";
+
+            if ($result = $connection->query($conseguirIDAlquiler)){
+                if ($result)
+                    $alquilerID = $result->fetch_object()->AUTO_INCREMENT - 1;
+                else{
+                    echo "Error al obtener el ID de alquiler.";
+                    $alquilerCorrecto = false;
+                }
+            }else
+                echo "Wrong Query";
+
+            // 3. Insertar en la tabla 'tiene'
+            $insertar2 = "INSERT INTO tiene
+                          VALUES ({$_GET['id']}, $alquilerID, 1);
+                         ";
+            if ($result = $connection->query($insertar2)) {
+                if (!$result){
+                    echo "Error al alquilar animal (insertar en tabla tiene).";
+                    $alquilerCorrecto = false;
+                }
+            }else
+                echo "Consulta errónea";
+
+            if($alquilerCorrecto){
+                echo "<p id='alquilerCorrecto'>¡Gracias por alquilar en Animal Shop!</p>";
+            }
+
+        }
 
     ?>
-     <input id="volver" type="button" onclick=" location.href='/php/proyecto/animales.php' " value="Volver" style=cursor:pointer; name="boton" />
-    <input  id="alquiler" type="button" onclick=" location.href='/php/proyecto/alquiler.php' " value="Alquilar" style=cursor:pointer; name="alquila" />
+
+     <input id="volver" type="button" onclick=" location.href='/php/proyecto/animales.php' " value="Volver" style=cursor:pointer; name="boton"
+     />
+    <form method="post">
+        <input id="alquiler" type="submit" value="Alquilar" style="cursor:pointer;" name="alquiler" />
+    </form>
 </body>
 </html>
