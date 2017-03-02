@@ -2,8 +2,10 @@ table{
   text-align: center;
   border-collapse: collapse;
   font-size: 16px;
-  margin: 100px;
-  margin-top: 200px;
+  margin: 240px;
+  margin: 200px;
+  margin-left: 390px;
+
 }
 
 
@@ -34,8 +36,8 @@ body{
 
 input[type="button"] {
   position: relative;
-  left: 100px;
-  top: -90px;
+  left: 395px;
+  top: -190px;
   border-radius: 8px;
   background: pink;
   padding: 5px 5px;
@@ -43,13 +45,12 @@ input[type="button"] {
   color: #666;
 }
 
-
 input[type=submit] {
   position: absolute;
-  margin-left: 1140px;
+  margin-left: 700px;
   background-color: #C9F;
   border-color: #866899;
-  margin-top: -450px;
+  margin-top: -500px;
   cursor:pointer;
   height: 22px;
 }

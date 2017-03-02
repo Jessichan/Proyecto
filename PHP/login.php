@@ -25,7 +25,7 @@
         //guardar sesion del usuario
         if (isset($_POST["user"])) {
             $user = $_POST['user'];
-            $pass = $_POST['pass'];
+            $pass = sha1($_POST['pass']);
 
             $login = "SELECT idcliente, tipo
                       FROM cliente

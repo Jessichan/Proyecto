@@ -46,12 +46,12 @@ create table animal
 
 create table tiene
 (
-	idanimal		int,
 	idalquiler		int,
+	idanimal		int,
 	cantidad		int,
-	primary key(idanimal, idalquiler),
-	foreign key(idanimal) references animal(idanimal) on delete cascade,
-	foreign key(idalquiler) references alquiler(idalquiler) on delete cascade
+	primary key(idalquiler, idanimal),
+	foreign key(idalquiler) references alquiler(idalquiler) on delete cascade,
+	foreign key(idanimal) references animal(idanimal) on delete cascade
 );
 
 create table accesorio
@@ -77,12 +77,12 @@ create table compra
 );
 
 -- insertar datos
-insert into cliente values(null, 'Maria', 'Gonzalez', '657890634','mariag@gmail.com','admin', 'Admin', '1234');
-insert into cliente values(null, 'Carlos', 'Martin', '654321672', 'carlosmar@gmail', 'carlos', 'User', '12345678');
-insert into cliente values(null, 'Amanda', 'Marin', '647896541', 'amanda23@gmail.com', 'amanda', 'User', '123456');
-insert into cliente values(null, 'Jose', 'Laguillo', '654789064', 'josela@gmail.com', 'josel', 'User', 'josel');
-insert into cliente values(null, 'Jonni', 'Melavo', '654378906', 'joni@gmail.com', 'jonim', 'User', 'jonim');
-insert into cliente values(null, 'Holi', 'Moli', '675432349', 'holimoli@hotmail.com', 'holim', 'User', 'holim');
+insert into cliente values(null, 'Maria', 'Gonzalez', '657890634','mariag@gmail.com','admin', 'Admin', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'); /*1234*/
+insert into cliente values(null, 'Carlos', 'Martin', '654321672', 'carlosmar@gmail', 'carlos', 'User', '7c222fb2927d828af22f592134e8932480637c0d'); /*12345678*/
+insert into cliente values(null, 'Amanda', 'Marin', '647896541', 'amanda23@gmail.com', 'amanda', 'User', '7c4a8d09ca3762af61e59520943dc26494f8941b'); /*123456*/
+insert into cliente values(null, 'Jose', 'Laguillo', '654789064', 'josela@gmail.com', 'josel', 'User', 'e4d1decaf0dee5323423dceff9f3b0df1ff6c965'); /*josel*/
+insert into cliente values(null, 'Jonni', 'Melavo', '654378906', 'joni@gmail.com', 'jonim', 'User', '9e8970052acaf49813b8209bf5478942ddd953b8'); /*jonim*/
+insert into cliente values(null, 'Holi', 'Moli', '675432349', 'holimoli@hotmail.com', 'holim', 'User', '06df3c817ae65cde33d99f4023fd105a57062228'); /*holim*/
 
 insert into alquiler values(null, 3, now());
 insert into alquiler values(null, 5, now());
@@ -104,12 +104,12 @@ insert into animal values(null, 'Cotorras', 'Pepito Juanito', 'Cotorras Cubanas'
 insert into animal values(null, 'Perro', 'Yaico', 'Husky Siberiano', '7 meses', 'Perro muy jugueton y sociable. Necesita pasear y hacer ejercicio.', 27.00, '/php/proyecto/img/yaico.jpg');
 insert into animal values(null, 'Perro', 'Rokko', 'Pastor Aleman', '1 año', 'Es muy jugueton y no le gusta estar solo. Todavia es pequeño y te hace algunas travesuras.', 25.00, '/php/proyecto/img/rokko.jpg');
 
-insert into tiene values(3, 4, 1);
+insert into tiene values(4, 3, 1);
 insert into tiene values(2, 2, 1);
-insert into tiene values(8, 2, 1);
-insert into tiene values(5, 3, 1);
-insert into tiene values(4, 5, 1);
-insert into tiene values(6, 1, 1);
+insert into tiene values(2, 8, 1);
+insert into tiene values(3, 5, 1);
+insert into tiene values(5, 4, 1);
+insert into tiene values(1, 6, 1);
 
 insert into accesorio values(null, 'Correa','Correa para perros' , 10, 3.00, '/php/proyecto/img/correa.jpg');
 insert into accesorio values(null, 'Sonajero', 'Juguete para gatos o perros', 10, 2.50, '/php/proyecto/img/sonajero.jpg');

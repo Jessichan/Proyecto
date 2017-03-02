@@ -66,21 +66,18 @@
 		<a href='adaccesorio.php'><img src='img/accesorios.png' width="230"px height="230"px/></a>
 	</div>
 	<div id="cuatro">
-		<a href='adalquiler.php'><img src='img/alquiler.png' width="230"px height="230"px/></a>
+		<a href='adtienealquiler.php'><img src='img/alquiler.png' width="230"px height="230"px/></a>
 	</div>
 	<div id="cinco">
 		<a href='adcompra.php'><img src='img/compra.png' width="210"px height="210"px/></a>
-	</div>
-	<div id="seis">
-		<a href='adtiene.php'><img src='img/tiene.png' width="210"px height="210"px/></a>
 	</div>
 
 	<p id="cliente">Clientes</p>
 	<p id="animales">Animales</p>
 	<p id="accesorios">Accesorios</p>
-	<p id="alquiler">Alquiler</p>
+	<p id="tienealquiler">Tiene Alquiler</p>
 	<p id="compra">Compra</p>
-	<p id="tiene">Tiene</p>
+
 
 </body>
 </html>

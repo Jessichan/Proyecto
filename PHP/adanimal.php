@@ -112,7 +112,7 @@
 
   <form method="post" id="Desconectar">
       <input type="submit" name="desloguear" value="Desconectar">
-        </form>
-        <?php echo "<p id='saludo'> Hola, $nombreusu</p>" ?>
-  </body>
+  </form>
+
+</body>
 </html>

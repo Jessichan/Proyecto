@@ -42,18 +42,12 @@ input[type="button"] {
   color: #666;
 }
 
-#saludo{
-  width: 90px;
-    margin-left: 962px;
-    margin-top: -1070px;
-}
-
 input[type=submit] {
   position: absolute;
   margin-left: 1050px;
   background-color: #C9F;
   border-color: #866899;
-  margin-top: -1070px;
+  margin-top: -1100px;
   cursor:pointer;
   height: 22px;
 }

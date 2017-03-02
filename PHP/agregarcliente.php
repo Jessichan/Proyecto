@@ -58,7 +58,7 @@
                 $email   = $_POST['email'];
                 $usu     = $_POST['usu'];
                 $tipo    = $_POST['tipo'];
-                $pass    = $_POST['pass'];
+                $pass    = sha1($_POST['pass']);
 
 
       	   $consulta = "INSERT INTO cliente VALUES(NULL, '$nombre', '$ape', '$tel', '$email', '$usu', '$tipo', '$pass');";
