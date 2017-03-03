@@ -26,7 +26,13 @@ input[type="button"] {
 }
 
 form{
-	margin: 100px auto;
+
+}
+#formAlquiler{
+		margin: 100px 19%;
+}
+#formTiene{
+		margin: 100px -17%;
 }
 
 fieldset{

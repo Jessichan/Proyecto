@@ -60,7 +60,7 @@
     ?>
 
 
-    <form method="post" enctype="multipart/form-data">
+    <form id="formAlquiler" method="post" enctype="multipart/form-data">
         <fieldset>
             <legend><h3>Alquiler</h3></legend>
             <span>Idalquiler:</span><input name="idalquiler" type="text" value="<?php echo $alquilerid; ?>" maxlength="11" required><br>
@@ -122,7 +122,7 @@
     ?>
 
 
-    <form method="post" enctype="multipart/form-data">
+    <form id="formTiene" method="post" enctype="multipart/form-data">
         <fieldset>
             <legend><h3>Tiene</h3></legend>
             <span>Idalquiler:</span><input name="idalquiler" type="text" value="<?php echo $tieneidalquiler; ?>" maxlength="11" required><br>
