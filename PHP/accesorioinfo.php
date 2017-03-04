@@ -12,7 +12,7 @@
         $precioAccesorioActual;
 
         session_start();
-         if(!isset($_SESSION['iduser'])){
+        if(!isset($_SESSION['iduser'])){
             header('Location: /php/proyecto/login.php');
         }
 
@@ -24,12 +24,12 @@
 
         //evita que usuario acceda a paginas de admin
         if(isset($_SESSION["iduser"])){
-            if($_SESSION["tipouser"] != "User"){
-              session_destroy();
-        header('Location: login.php');
-            }
+                if($_SESSION["tipouser"] != "User"){
+                    session_destroy();
+                    header('Location: login.php');
+                }
         }else
-        header('Location: login.php');
+            header('Location: login.php');
 
         if(isset($_SESSION["iduser"])){
             $nombreusu = "";
@@ -41,8 +41,8 @@
                          ";
 
             if ($result = $connection->query($nombreusu)) {
-                if ($result->num_rows > 0)
-                    $nombreusu = $result->fetch_object()->nombre;
+                    if ($result->num_rows > 0)
+                        $nombreusu = $result->fetch_object()->nombre;
                 else
                     echo "No se ha encontrado el nombre de usuario";
             }else
@@ -53,14 +53,11 @@
         $infoacces = "SELECT * FROM accesorio WHERE idaccesorio = {$_GET['id']};";
 
         if ($result = $connection->query($infoacces)) {
-            if ($result){
-                $obj = $result->fetch_object();
-                echo "<div id='caja'>";
-
+                if ($result){
+                    $obj = $result->fetch_object();
+                    echo "<div id='caja'>";
                         echo "<input type='submit' name='desloguear' value='Desconectar'>";
-
                         echo "<p id=saludo> Hola, $nombreusu</p>";
-
                         echo "<div id='foto'>";
                             echo "<p><img src='".$obj->imagen."' width='250px' height='250px'></p>";
                         echo "</div>";
@@ -76,11 +73,10 @@
                         echo "<div id='precio'>";
                             echo "<h1><b> </b>".$obj->precio." €</h1>";
                         echo "</div>";
-
-                echo "</div>";
-                $precioAccesorioActual = $obj->precio;
-            }else
-                echo "Imposible conseguir los datos";
+                    echo "</div>";
+                    $precioAccesorioActual = $obj->precio;
+                }else
+                    echo "Imposible conseguir los datos";
         }else
             echo "Query Failed";
 

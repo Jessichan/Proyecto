@@ -55,27 +55,24 @@
                 $query->close();
             }
         }
-
-
     ?>
 
     <div id="caja">
         <img id="logo" src="/php/proyecto/img/logo.png">
         <form class='login' method="post">
-        <div>
-            <label>Username</label>
-            <input name="user" type="text" required>
-        </div>
-        <div>
-            <label>Password</label>
-            <input name="pass" type="password" required>
-        </div>
-        <div><center>
-            <input type="submit" value="Entrar" style=cursor:pointer;></center>
-        </div><center>
-        <div>¿No tienes cuenta? <a href="/php/proyecto/sigin.php">Registrarse</a></div></center>
-    </form>
+            <div>
+                <label>Username</label>
+                <input name="user" type="text" required>
+            </div>
+            <div>
+                <label>Password</label>
+                <input name="pass" type="password" required>
+            </div>
+            <div><center>
+                <input type="submit" value="Entrar" style=cursor:pointer;></center>
+            </div><center>
+            <div>¿No tienes cuenta? <a href="/php/proyecto/sigin.php">Registrarse</a></div></center>
+        </form>
     </div>
 </body>
 </html>
-

@@ -7,32 +7,32 @@
 </head>
 <body>
 	<?php
-		include_once "conec.php";
- 		session_start();
+        include_once "conec.php";
+        session_start();
 
- 		//si no estas logueado redirecciona a login
+        //si no estas logueado redirecciona a login
       	$nombreusu = "";
         if(!isset($_SESSION['iduser'])){
       		header('Location: /php/proyecto/login.php');
         }
 
-    if(isset($_POST["desloguear"])){
-      session_destroy();
-      header('Location: /php/proyecto/login.php');
-    }
+        if(isset($_POST["desloguear"])){
+            session_destroy();
+            header('Location: /php/proyecto/login.php');
+        }
 
-    //evitar que administrador acceda a paginas de usuario
-    if(isset($_SESSION["iduser"])){
-            if($_SESSION["tipouser"] != "Admin"){
-              session_destroy();
-        header('Location: login.php');
-            }
-    }else
-      header('Location: login.php');
+        //evitar que administrador acceda a paginas de usuario
+        if(isset($_SESSION["iduser"])){
+                if($_SESSION["tipouser"] != "Admin"){
+                    session_destroy();
+                    header('Location: login.php');
+                }
+        }else
+            header('Location: login.php');
 
-    if(isset($_SESSION["iduser"])){
+        if(isset($_SESSION["iduser"])){
 
-      		// Consigue nombre de usuario
+      	    // Consigue nombre de usuario
             $nombreusu = "SELECT nombre
                          FROM cliente
                          WHERE idcliente = {$_SESSION['iduser']};
@@ -45,17 +45,17 @@
                     echo "No se ha encontrado el nombre de usuario";
             }else
                 echo "Wrong Query";
-     }
- 			?>
+        }
+ 	?>
 
 
 
-<div id="caja">
+    <div id="caja">
         <form method="post" id="Desconectar">
-      <input type="submit" name="desloguear" value="Desconectar">
+            <input type="submit" name="desloguear" value="Desconectar">
         </form>
         <?php echo "<p id='saludo'> Hola, $nombreusu</p>" ?>
-</div>
+    </div>
  	<div id="uno">
 		<a href='adcliente.php'><img src='img/clientes.png' /></a>
 	</div>
@@ -77,7 +77,5 @@
 	<p id="accesorios">Accesorios</p>
 	<p id="tienealquiler">Tiene Alquiler</p>
 	<p id="compra">Compra</p>
-
-
 </body>
 </html>

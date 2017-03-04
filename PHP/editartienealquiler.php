@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>Modificar</title>
-     <link rel="stylesheet" type="text/css" href="css/editartienealquiler.css ">
+    <link rel="stylesheet" type="text/css" href="css/editartienealquiler.css ">
     <style>
         span {
             width: 100px;
@@ -42,7 +42,7 @@
         $alquilercliid;
         $alquilerfecha;
 
-
+        //Pone id igual que id que le paso por variable y recoge su info
         if ($result = $connection->query("SELECT * FROM alquiler WHERE idalquiler = $idalquiler")){
 
 
@@ -56,7 +56,6 @@
                 echo "No alquileres encontrados.";
         }else
             echo "<br><br>Query wrong.";
-
     ?>
 
 
@@ -72,9 +71,9 @@
         </fieldset>
     </form>
 
-     <?php
+    <?php
 
-        // Editar Clientes cuando se haya enviado por POST el ID
+        // Editar alquiler cuando se haya enviado por POST el ID
         if (isset($_POST['id'])) {
 
 
@@ -89,7 +88,7 @@
          }else
             echo "consulta invalida";
 
-        // 2. Agregar
+        // 2. Agregar en tabla alquiler
         $consulta = "INSERT INTO alquiler VALUES($idalquiler, '$idcliente', '$fecha');";
 
            $result = $connection->query($consulta);
@@ -104,7 +103,7 @@
         $tieneidanimal;
         $tienecantidad;
 
-
+        //recoge info del id pasado por get
         if ($result = $connection->query("SELECT * FROM tiene WHERE idalquiler = $idalquiler")){
 
 
@@ -118,7 +117,6 @@
                 echo "No encontrado.";
         }else
             echo "<br><br>Query wrong.";
-
     ?>
 
 
@@ -134,34 +132,30 @@
         </fieldset>
     </form>
 
-     <?php
+    <?php
 
-        // Editar Clientes cuando se haya enviado por POST el ID
+        // Editar tiene cuando se haya enviado por POST el ID
         if (isset($_POST['id'])) {
 
+            $idalquiler  = $_POST['id'];
+            $idanimal    = $_POST['idanimal'];
+            $cantidad    = $_POST['cantidad'];
 
-        $idalquiler  = $_POST['id'];
-        $idanimal    = $_POST['idanimal'];
-        $cantidad    = $_POST['cantidad'];
+            // 1. Eliminar
+            if ($result = $connection->query("DELETE FROM tiene WHERE idalquiler = $id")){
+                    if ($result == false)
+                        echo "error: imposible eliminar";
+            }else
+                echo "consulta invalida";
 
-        // 1. Eliminar
-         if ($result = $connection->query("DELETE FROM tiene WHERE idalquiler = $id")){
-                if ($result == false)
-                    echo "error: imposible eliminar";
-         }else
-            echo "consulta invalida";
-
-        // 2. Agregar
-        $consulta = "INSERT INTO tiene VALUES($idalquiler '$idanimal', '$cantidad');";
+            // 2. Agregar
+            $consulta = "INSERT INTO tiene VALUES($idalquiler '$idanimal', '$cantidad');";
 
            $result = $connection->query($consulta);
-           if (!$result)
+            if (!$result)
                 echo "Query Error";
         }
-        ?>
-
-
-
+    ?>
 </body>
 </html>
 
