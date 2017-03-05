@@ -22,30 +22,30 @@
         //evitar que administrador acceda a paginas de usuario
         if(isset($_SESSION["iduser"])){
             if($_SESSION["tipouser"] != "Admin"){
-              session_destroy();
-            header('Location: login.php');
+                session_destroy();
+                header('Location: login.php');
             }
         }else
-        header('Location: login.php');
+            header('Location: login.php');
 
 
         if (!empty($_GET)) {
             $id="";
 
-        if (!empty($_GET['id']))
-            $id=$_GET['id'];
+            if (!empty($_GET['id']))
+                $id=$_GET['id'];
 
 
 
-      /* Consultas de selección que devuelven un conjunto de resultados */
-      $result = $connection->query("DELETE FROM cliente where Idcliente=$id");
+            /* Consultas de selección que devuelven un conjunto de resultados */
+            $result = $connection->query("DELETE FROM cliente where Idcliente=$id");
         }
     ?>
 
     <echo><p>Cliente Borrado</p></echo>
 
     <form method="post">
-         <input id="volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
+        <input id="volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
     </form>
 </body>
 </html>

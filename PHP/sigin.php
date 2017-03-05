@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="css/sigin.css">
 </head>
 <body>
-
     <?php
         include_once "conec.php";
+
+        //Guarda info en variables
         if (isset($_POST["nombre"])) {
             $nom   = $_POST['nombre'];
             $ape   = $_POST['ape'];
@@ -57,6 +58,5 @@
             <input type="submit" value="Registrarse" style=cursor:pointer;>
         </form>
     </div>
-
 </body>
 </html>

@@ -13,9 +13,9 @@
 <body>
 
     <?php
-       include_once "conec.php";
+        include_once "conec.php";
 
-       session_start();
+        session_start();
 
         //si no estas logueado redirecciona a login
         $nombreusu = "";
@@ -26,11 +26,11 @@
         //evitar que administrador acceda a paginas de usuario
         if(isset($_SESSION["iduser"])){
             if($_SESSION["tipouser"] != "Admin"){
-              session_destroy();
-            header('Location: login.php');
+                session_destroy();
+                header('Location: login.php');
             }
         }else
-        header('Location: login.php');
+            header('Location: login.php');
 
 
         if(!$_GET['id'])
@@ -49,23 +49,21 @@
 
         if ($result = $connection->query("SELECT * FROM animal WHERE idanimal = $idanimal")){
 
-
             if($result->num_rows > 0){
                 $valor = $result->fetch_object();
 
-                $animalid = $valor->idanimal;
-                $animalespecie = $valor->especie;
-                $animalnombre = $valor->nombre;
-                $animalraza = $valor->raza;
-                $animaledad = $valor->edad;
+                $animalid          = $valor->idanimal;
+                $animalespecie     = $valor->especie;
+                $animalnombre      = $valor->nombre;
+                $animalraza        = $valor->raza;
+                $animaledad        = $valor->edad;
                 $animaldescripcion = $valor->descripcion;
-                $animalprecio = $valor->precio;
-                $animalimagen = $valor->imagen;
+                $animalprecio      = $valor->precio;
+                $animalimagen      = $valor->imagen;
             }else
                 echo "No animales encontrados.";
         }else
             echo "<br><br>Query wrong.";
-
     ?>
 
 
@@ -86,37 +84,36 @@
         </fieldset>
     </form>
 
-     <?php
+    <?php
 
         // Editar Clientes cuando se haya enviado por POST el ID
         if (isset($_POST['id'])) {
 
 
-        $id          = $_POST['id'];
-        $especie     = $_POST['especie'];
-        $nombre      = $_POST['nombre'];
-        $raza        = $_POST['raza'];
-        $edad        = $_POST['edad'];
-        $descripcion = $_POST['des'];
-        $precio      = $_POST['precio'];
-        $imagen      = $_POST['image'];
+            $id          = $_POST['id'];
+            $especie     = $_POST['especie'];
+            $nombre      = $_POST['nombre'];
+            $raza        = $_POST['raza'];
+            $edad        = $_POST['edad'];
+            $descripcion = $_POST['des'];
+            $precio      = $_POST['precio'];
+            $imagen      = $_POST['image'];
 
-        // 1. Eliminar
-         if ($result = $connection->query("DELETE FROM animal WHERE idanimal = $id")){
+            // 1. Eliminar
+            if ($result = $connection->query("DELETE FROM animal WHERE idanimal = $id")){
                 if ($result == false)
                     echo "error: imposible eliminar animal";
-         }else
-            echo "consulta invalida";
+            }else
+                echo "consulta invalida";
 
-        // 2. Agregar
-        $consulta = "INSERT INTO animal VALUES($id, '$especie', '$nombre', '$raza', '$edad', '$descripcion', '$precio', '$imagen');";
+            // 2. Agregar
+            $consulta = "INSERT INTO animal VALUES($id, '$especie', '$nombre', '$raza', '$edad', '$descripcion', '$precio', '$imagen');";
 
-           $result = $connection->query($consulta);
-           if (!$result)
+            $result = $connection->query($consulta);
+            if (!$result)
                 echo "Query Error";
         }
-        ?>
-
+    ?>
 </body>
 </html>
 

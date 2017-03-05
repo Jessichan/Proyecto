@@ -46,8 +46,8 @@
         //evitar que administrador acceda a paginas de usuario
         if(isset($_SESSION["iduser"])){
             if($_SESSION["tipouser"] != "Admin"){
-              session_destroy();
-            header('Location: login.php');
+                session_destroy();
+                header('Location: login.php');
             }
         }else
         header('Location: login.php');

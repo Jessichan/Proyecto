@@ -22,23 +22,23 @@
         //evitar que administrador acceda a paginas de usuario
         if(isset($_SESSION["iduser"])){
             if($_SESSION["tipouser"] != "Admin"){
-              session_destroy();
-            header('Location: login.php');
+                session_destroy();
+                header('Location: login.php');
             }
         }else
-        header('Location: login.php');
+            header('Location: login.php');
 
 
         if (!empty($_GET)) {
                 $id="";
 
-        if (!empty($_GET['id']))
+            if (!empty($_GET['id']))
                 $id=$_GET['id'];
 
 
 
-      /* Consultas de selección que devuelven un conjunto de resultados */
-      $result = $connection->query("DELETE FROM alquiler where Idalquiler=$id");
+            /* Consultas de selección que devuelven un conjunto de resultados */
+            $result = $connection->query("DELETE FROM alquiler where Idalquiler=$id");
         }
     ?>
 

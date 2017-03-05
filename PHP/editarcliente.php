@@ -26,11 +26,11 @@
         //evitar que administrador acceda a paginas de usuario
         if(isset($_SESSION["iduser"])){
             if($_SESSION["tipouser"] != "Admin"){
-              session_destroy();
-            header('Location: login.php');
+                session_destroy();
+                header('Location: login.php');
             }
         }else
-        header('Location: login.php');
+            header('Location: login.php');
 
 
         if(!$_GET['id'])
@@ -48,18 +48,18 @@
         $clientepassword;
 
         if ($result = $connection->query("SELECT * FROM cliente WHERE idcliente = $idcliente")){
-        // if ($result = $connection->query("SELECT * FROM cliente WHERE idcliente = 1")){
+            // if ($result = $connection->query("SELECT * FROM cliente WHERE idcliente = 1")){
 
             if($result->num_rows > 0){
                 $valor = $result->fetch_object();
 
-                $clienteid = $valor->idcliente;
-                $clientenombre = $valor->nombre;
+                $clienteid       = $valor->idcliente;
+                $clientenombre   = $valor->nombre;
                 $clienteapellido = $valor->apellidos;
                 $clientetelefono = $valor->telefono;
-                $clienteemail = $valor->email;
-                $clienteusuario = $valor->usuario;
-                $clientetipo = $valor->tipo;
+                $clienteemail    = $valor->email;
+                $clienteusuario  = $valor->usuario;
+                $clientetipo     = $valor->tipo;
                 $clientepassword = $valor->password;
             }else
                 echo "No clients found.";
@@ -67,7 +67,6 @@
             echo "<br><br>Query wrong.";
 
     ?>
-
 
     <form method="post">
         <fieldset>
@@ -86,34 +85,34 @@
         </fieldset>
     </form>
 
- <?php
+    <?php
 
-    // Editar Clientes cuando se haya enviado por POST el ID
-    if (isset($_POST['id'])) {
+        // Editar Clientes cuando se haya enviado por POST el ID
+        if (isset($_POST['id'])) {
 
-        $id        = $_POST['id'];
-        $nombre    = $_POST['nombre'];
-        $apellidos = $_POST['ape'];
-        $telefono  = $_POST['tfono'];
-        $email     = $_POST['email'];
-        $usuario   = $_POST['user'];
-        $tipo      = $_POST['tipo'];
-        $password  = $_POST['pass'];
+            $id        = $_POST['id'];
+            $nombre    = $_POST['nombre'];
+            $apellidos = $_POST['ape'];
+            $telefono  = $_POST['tfono'];
+            $email     = $_POST['email'];
+            $usuario   = $_POST['user'];
+            $tipo      = $_POST['tipo'];
+            $password  = $_POST['pass'];
 
-        // 1. Eliminar
-        if ($result = $connection->query("DELETE FROM cliente WHERE idcliente = $id;")){
-            if ($result == false)
-                echo "error: imposible eliminar cliente";
-        }else
-            echo "consulta invalida";
+            // 1. Eliminar
+            if ($result = $connection->query("DELETE FROM cliente WHERE idcliente = $id;")){
+                if ($result == false)
+                    echo "error: imposible eliminar cliente";
+            }else
+                echo "consulta invalida";
 
-        // 2. Agregar
-        $consulta = "INSERT INTO cliente VALUES($id, '$nombre', '$apellidos', '$telefono', '$email', '$usuario', '$tipo', '$password');";
+            // 2. Agregar
+            $consulta = "INSERT INTO cliente VALUES($id, '$nombre', '$apellidos', '$telefono', '$email', '$usuario', '$tipo', '$password');";
 
-        $result = $connection->query($consulta);
-        if (!$result)
-            echo "Query Error";
-    }
-?>
+            $result = $connection->query($consulta);
+            if (!$result)
+                echo "Query Error";
+        }
+    ?>
 </body>
 </html>

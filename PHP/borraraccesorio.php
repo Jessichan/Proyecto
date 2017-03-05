@@ -11,7 +11,7 @@
 
       include_once "conec.php";
 
-      session_start();
+        session_start();
 
         //si no estas logueado redirecciona a login
         $nombreusu = "";
@@ -28,20 +28,20 @@
         }else
         header('Location: login.php');
 
-      if (!empty($_GET)) {
-        $id="";
+        if (!empty($_GET)) {
+            $id="";
 
-        if (!empty($_GET['id']))
-              $id=$_GET['id'];
+            if (!empty($_GET['id']))
+                $id=$_GET['id'];
 
 
-       //MAKING A SELECT QUERY
-      /* Consultas de selección que devuelven un conjunto de resultados */
-      $result = $connection->query("DELETE FROM accesorio where Idaccesorio=$id");
-       }
+            //MAKING A SELECT QUERY
+            /* Consultas de selección que devuelven un conjunto de resultados */
+            $result = $connection->query("DELETE FROM accesorio where Idaccesorio=$id");
+        }
     ?>
 
-      <echo><p>Accesorio Borrado</p></echo>
+    <echo><p>Accesorio Borrado</p></echo>
 
     <form method="post">
         <input id="volver" type="button" onclick=" location.href='/php/proyecto/adaccesorio.php' " value="Volver" style=cursor:pointer; name="boton" />

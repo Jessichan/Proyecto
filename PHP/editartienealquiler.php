@@ -26,11 +26,11 @@
         //evitar que administrador acceda a paginas de usuario
         if(isset($_SESSION["iduser"])){
             if($_SESSION["tipouser"] != "Admin"){
-              session_destroy();
-            header('Location: login.php');
+                session_destroy();
+                header('Location: login.php');
             }
         }else
-        header('Location: login.php');
+            header('Location: login.php');
 
 
         if(!$_GET['id'])
@@ -44,7 +44,6 @@
 
         //Pone id igual que id que le paso por variable y recoge su info
         if ($result = $connection->query("SELECT * FROM alquiler WHERE idalquiler = $idalquiler")){
-
 
             if($result->num_rows > 0){
                 $valor = $result->fetch_object();
@@ -76,23 +75,22 @@
         // Editar alquiler cuando se haya enviado por POST el ID
         if (isset($_POST['id'])) {
 
+            $idalquiler = $_POST['id'];
+            $idcliente  = $_POST['idcliente'];
+            $fecha      = $_POST['fecha'];
 
-        $idalquiler = $_POST['id'];
-        $idcliente  = $_POST['idcliente'];
-        $fecha      = $_POST['fecha'];
-
-        // 1. Eliminar
-         if ($result = $connection->query("DELETE FROM alquiler WHERE idalquiler = $id")){
+            // 1. Eliminar
+            if ($result = $connection->query("DELETE FROM alquiler WHERE idalquiler = $id")){
                 if ($result == false)
                     echo "error: imposible eliminar alquiler";
-         }else
-            echo "consulta invalida";
+            }else
+                echo "consulta invalida";
 
-        // 2. Agregar en tabla alquiler
-        $consulta = "INSERT INTO alquiler VALUES($idalquiler, '$idcliente', '$fecha');";
+            // 2. Agregar en tabla alquiler
+            $consulta = "INSERT INTO alquiler VALUES($idalquiler, '$idcliente', '$fecha');";
 
-           $result = $connection->query($consulta);
-           if (!$result)
+            $result = $connection->query($consulta);
+            if (!$result)
                 echo "Query Error";
         }
 
@@ -106,19 +104,17 @@
         //recoge info del id pasado por get
         if ($result = $connection->query("SELECT * FROM tiene WHERE idalquiler = $idalquiler")){
 
-
             if($result->num_rows > 0){
                 $valor = $result->fetch_object();
 
-                $tieneidalquiler = $valor->idalquiler;
-                $tieneidanimal   = $valor->idanimal;
+                $tieneidalquiler  = $valor->idalquiler;
+                $tieneidanimal    = $valor->idanimal;
                 $tienecantidad    = $valor->cantidad;
             }else
                 echo "No encontrado.";
         }else
             echo "<br><br>Query wrong.";
     ?>
-
 
     <form id="formTiene" method="post" enctype="multipart/form-data">
         <fieldset>
@@ -143,15 +139,15 @@
 
             // 1. Eliminar
             if ($result = $connection->query("DELETE FROM tiene WHERE idalquiler = $id")){
-                    if ($result == false)
-                        echo "error: imposible eliminar";
+                if ($result == false)
+                    echo "error: imposible eliminar";
             }else
                 echo "consulta invalida";
 
             // 2. Agregar
             $consulta = "INSERT INTO tiene VALUES($idalquiler '$idanimal', '$cantidad');";
 
-           $result = $connection->query($consulta);
+            $result = $connection->query($consulta);
             if (!$result)
                 echo "Query Error";
         }
