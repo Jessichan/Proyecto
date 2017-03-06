@@ -78,7 +78,7 @@
             <span>Email:</span><input name="email" type="email" value="<?php echo $clienteemail; ?>" maxlength="100" required>
             <span>Usuario:</span><input name="user" type="text" value="<?php echo  $clienteusuario; ?>" maxlength="15" required><br>
             <span>Tipo:</span><input name="tipo" type="text" value="<?php echo  $clientetipo; ?>" maxlength="15" required><br>
-            <span>Password:</span> <input name="pass" type="password" value="<?php echo $clientepassword; ?>" maxlength="50" required><br>
+            <span>Password:</span> <input name="pass" type="password" maxlength="50" required><br>
             <span><input id= "Modificar" type="submit" value="Modificar"></span><br>
             <span><input id="Volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
             </span>
@@ -97,7 +97,7 @@
             $email     = $_POST['email'];
             $usuario   = $_POST['user'];
             $tipo      = $_POST['tipo'];
-            $password  = $_POST['pass'];
+            $password  = sha1($_POST['pass']);
 
             // 1. Eliminar
             if ($result = $connection->query("DELETE FROM cliente WHERE idcliente = $id;")){

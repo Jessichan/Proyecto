@@ -21,7 +21,10 @@
             <span>Telefono:</span><input type="tel" name="tel" pattern="[0-9]{9}" required><br>
             <span>Email:</span><input type="email" name="email" maxlength="100" required><br>
             <span>Usuario:</span><input type="text" name="usu" maxlength="15" required><br>
-            <span>Tipo:</span><input type="text" name="tipo" maxlength="20" required><br>
+            <span>Tipo:</span><select name="tipo">
+                                    <option>Admin</option>
+                                    <option>User</option>
+                                </select required><br>
             <span>Pasword:</span><input type="text" name="pass" maxlength="50" required><br>
             <span><input id= "enviar" type="submit" value="Enviar"></span><br>
             <span><input id="volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />

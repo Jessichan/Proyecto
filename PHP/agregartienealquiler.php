@@ -16,7 +16,7 @@
     <form method="post">
         <fieldset>
             <legend><h3>Tiene Alquiler</h3></legend>
-            <span>idcliente:</span><input type="text" name="id" maxlength="50" required><br>
+            <span>Idcliente:</span><input type="text" name="id" maxlength="50" required><br>
             <span>Fecha:</span><input type="date" name="fecha" maxlength="50" required><br>
             <span>Idanimal:</span><input type="integer" name="idanimal" maxlength="5" required><br>
             <span>Cantidad:</span><input type="integer" name="cantidad" maxlength="10" required><br>
