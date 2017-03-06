@@ -76,6 +76,8 @@
           //FETCHING OBJECTS FROM THE RESULT SET
           //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
           while($obj = $result->fetch_object()) {
+                $size= 42;
+                $str=$obj->descripcion;
                 //PRINTING EACH ROW
                 echo "<tr>";
                     echo "<td>".$obj->idanimal."</td>";
@@ -83,7 +85,7 @@
                     echo "<td>".$obj->nombre."</td>";
                     echo "<td>".$obj->raza."</td>";
                     echo "<td>".$obj->edad."</td>";
-                    echo "<td>".$obj->descripcion."</td>";
+                    echo "<td>".$str = trim(substr($str, 0, $size))."..."."</td>";
                     echo "<td>".$obj->precio."</td>";
                     echo "<td>".$obj->imagen."</td>";
                     echo "<td><a href='editaranimal.php?id=".$obj->idanimal."'><img src='img/modificar.jpg' width='15px'height='15px'/></a></td>";
