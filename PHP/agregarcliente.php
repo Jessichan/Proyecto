@@ -21,7 +21,7 @@
             <span>Telefono:</span><input type="tel" name="tel" pattern="[0-9]{9}" required><br>
             <span>Email:</span><input type="email" name="email" maxlength="100" required><br>
             <span>Usuario:</span><input type="text" name="usu" maxlength="15" required><br>
-            <span>Tipo:</span><select name="tipo">
+            <span>Tipo:</span><select name="tipo"/>
                                     <option>Admin</option>
                                     <option>User</option>
                                 </select required><br>
