@@ -53,3 +53,9 @@ input[type=submit] {
 	border-color: firebrick;
 }
 
+#volver {
+	margin-top: 20px;
+	margin-left: 10px;
+	background-color: #E94330;
+	border-color: firebrick;
+}

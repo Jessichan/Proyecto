@@ -128,7 +128,10 @@
                 echo "Consulta errónea";
 
             if($alquilerCorrecto){
-                echo "<p id='alquilerCorrecto'>¡Gracias por alquilar en Animal Shop!</p>";
+
+                echo "<div id=ya>";
+                echo "¡Gracias por alquilar en Animal Shop!. Podrá recoger y pagar este alquiler en nuestra tienda.";
+                echo "</div>";
             }
 
         }

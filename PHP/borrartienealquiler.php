@@ -45,7 +45,7 @@
     <echo><p>Alquiler Borrado</p></echo>
 
     <form method="post">
-        <input id="volver" type="button" onclick=" location.href='/php/proyecto/adalquiler.php' " value="Volver" style=cursor:pointer; name="boton" />
+        <input id="volver" type="button" onclick=" location.href='/php/proyecto/adtienealquiler.php' " value="Volver" style=cursor:pointer; name="boton" />
     </form>
 </body>
 </html>

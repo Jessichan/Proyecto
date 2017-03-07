@@ -56,6 +56,7 @@
                 <input name="pass" type="password" maxlength="50" required>
             </div>
             <input type="submit" value="Registrarse" style=cursor:pointer;>
+            <input id="volver" type="button" onclick=" location.href='/php/proyecto/login.php' " value="Volver" style=cursor:pointer; name="boton" />
         </form>
     </div>
 </body>

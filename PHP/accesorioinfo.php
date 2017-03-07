@@ -87,7 +87,7 @@
 
             if ($result = $connection->query($insertar)) {
                 if (!$result)
-                    echo "Erro al comprar accesorio (insertar en tabla compra).";
+                    echo "Error al comprar accesorio (insertar en tabla compra).";
             }else
                 echo "Consulta errónea";
         }

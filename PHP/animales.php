@@ -96,7 +96,6 @@
 				}
 			?>
 		</div>
-        <input id="volver" type="button" onclick=" location.href='/php/proyecto/menu.php' " value="Volver" style=cursor:pointer; name="boton" />
     </div>
 </body>
 </html>
