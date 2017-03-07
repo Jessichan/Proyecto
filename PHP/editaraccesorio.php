@@ -70,7 +70,7 @@
     <form method="post" enctype="multipart/form-data">
         <fieldset>
             <legend><h3>Accesorio</h3></legend>
-            <span>Id:</span><input name="id" type="text" value="<?php echo $accesorioid; ?>" maxlength="25" required>
+            <span>Id:</span><input name="id" type="text" value="<?php echo $accesorioid; ?>" maxlength="25" readonly required>
             <span>Nombre:</span><input name="nombre" type="text" value="<?php echo $accesorionombre; ?>" maxlength="500" required><br>
             <span>Descripcion:</span><input name="descripcion" type="text" value="<?php echo  $accesoriodescripcion; ?>" maxlength="500" required><br>
             <span>Cantidad:</span><input name="cantidad" type="text" value="<?php echo  $accesoriocantidad; ?>" maxlength="10" required><br>

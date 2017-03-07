@@ -70,7 +70,7 @@
     <form method="post" enctype="multipart/form-data">
         <fieldset>
             <legend><h3>Animal</h3></legend>
-            <span>Id:</span><input name="id" type="text" value="<?php echo $animalid; ?>" maxlength="11" required><br>
+            <span>Id:</span><input name="id" type="text" value="<?php echo $animalid; ?>" maxlength="11" readonly required><br>
             <span>Especie:</span><input name="especie" type="text" value="<?php echo $animalespecie; ?>" maxlength="20" required><br>
             <span>Nombre:</span><input name="nombre" type="text" value="<?php echo  $animalnombre; ?>" maxlength="25" required><br>
             <span>Raza:</span><input name="raza" type="text" value="<?php echo $animalraza; ?>" maxlength="50" required><br>

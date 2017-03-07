@@ -46,10 +46,10 @@ input[type="button"] {
 
 input[type=submit] {
   position: absolute;
-  margin-left: 1140px;
+  margin-left: 1030px;
   background-color: #C9F;
   border-color: #866899;
-  margin-top: -450px;
+  margin-top: -420px;
   cursor:pointer;
   height: 22px;
 }

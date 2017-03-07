@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Modificar</title>
@@ -55,45 +56,6 @@
                 echo "No alquileres encontrados.";
         }else
             echo "<br><br>Query wrong.";
-    ?>
-
-
-    <form id="formAlquiler" method="post" enctype="multipart/form-data">
-        <fieldset>
-            <legend><h3>Alquiler</h3></legend>
-            <span>Idalquiler:</span><input name="idalquiler" type="text" value="<?php echo $alquilerid; ?>" maxlength="11" required><br>
-            <span>Idcliente:</span><input name="idcliente" type="text" value="<?php echo $alquilercliid; ?>" maxlength="11" required><br>
-            <span>Fecha:</span><input name="fecha" type="date" value="<?php echo  $alquilerfecha; ?>" required><br>
-            <span><input id= "Modificar" type="submit" value="Modificar"></span><br>
-            <span><input id="Volver" type="button" onclick=" location.href='/php/proyecto/adtienealquiler.php' " value="Volver" style=cursor:pointer; name="boton" />
-            </span>
-        </fieldset>
-    </form>
-
-    <?php
-
-        // Editar alquiler cuando se haya enviado por POST el ID
-        if (isset($_POST['id'])) {
-
-            $idalquiler = $_POST['id'];
-            $idcliente  = $_POST['idcliente'];
-            $fecha      = $_POST['fecha'];
-
-            // 1. Eliminar
-            if ($result = $connection->query("DELETE FROM alquiler WHERE idalquiler = $id")){
-                if ($result == false)
-                    echo "error: imposible eliminar alquiler";
-            }else
-                echo "consulta invalida";
-
-            // 2. Agregar en tabla alquiler
-            $consulta = "INSERT INTO alquiler VALUES($idalquiler, '$idcliente', '$fecha');";
-
-            $result = $connection->query($consulta);
-            if (!$result)
-                echo "Query Error";
-        }
-
 
         $idalquiler = $_GET['id'];
 
@@ -114,43 +76,54 @@
                 echo "No encontrado.";
         }else
             echo "<br><br>Query wrong.";
-    ?>
 
-    <form id="formTiene" method="post" enctype="multipart/form-data">
-        <fieldset>
-            <legend><h3>Tiene</h3></legend>
-            <span>Idalquiler:</span><input name="idalquiler" type="text" value="<?php echo $tieneidalquiler; ?>" maxlength="11" required><br>
-            <span>Idanimal:</span><input name="idanimal" type="text" value="<?php echo $tieneidanimal; ?>" maxlength="11" required><br>
-            <span>Cantidad:</span><input name="cantidad" type="text" value="<?php echo  $tienecantidad; ?>" required><br>
-            <span><input id= "Modificar" type="submit" value="Modificar"></span><br>
-            <span><input id="Volver" type="button" onclick=" location.href='/php/proyecto/adtienealquiler.php' " value="Volver" style=cursor:pointer; name="boton" />
-            </span>
-        </fieldset>
-    </form>
 
-    <?php
+        if(isset($_POST['modificar'])){
+            $idalquiler = $_POST['idalquiler'];
+            $idcliente  = $_POST['idcliente'];
+            $idanimal   = $_POST['idanimal'];
+            $fecha      = $_POST['fecha'];
+            $cantidad   = $_POST['cantidad'];
 
-        // Editar tiene cuando se haya enviado por POST el ID
-        if (isset($_POST['id'])) {
 
-            $idalquiler  = $_POST['id'];
-            $idanimal    = $_POST['idanimal'];
-            $cantidad    = $_POST['cantidad'];
-
-            // 1. Eliminar
-            if ($result = $connection->query("DELETE FROM tiene WHERE idalquiler = $id")){
+            //1. Eliminar
+            if ($result = $connection->query("DELETE FROM alquiler WHERE idalquiler = $idalquiler")){
                 if ($result == false)
                     echo "error: imposible eliminar";
             }else
                 echo "consulta invalida";
 
-            // 2. Agregar
-            $consulta = "INSERT INTO tiene VALUES($idalquiler '$idanimal', '$cantidad');";
+            //2. agregar
+            $consulta1 = "INSERT INTO alquiler VALUES($idalquiler, $idcliente, '$fecha');";
+            $consulta2 = "INSERT INTO tiene VALUES($idalquiler, $idanimal, $cantidad);";
 
-            $result = $connection->query($consulta);
-            if (!$result)
-                echo "Query Error";
+            if($result = $connection->query($consulta1)){
+                if (!$result)
+                    echo "Error: imposible insertar en la tabla alquiler";
+            }else
+                echo "Error en la consulta 1";
+
+            if($result = $connection->query($consulta2)){
+                if (!$result)
+                    echo "Error: imposible insertar en la tabla tiene";
+            }else
+                echo "Error en la consulta 2";
         }
+
     ?>
+
+    <form method="post">
+        <fieldset>
+            <legend><h3>TieneAlquiler</h3></legend>
+            <span>Idalquiler:</span><input name="idalquiler" type="text" value="<?php echo $alquilerid; ?>"><br>
+            <span>Idcliente:</span><input name="idcliente" type="text" value="<?php echo $alquilercliid; ?>"><br>
+            <span>Idanimal:</span><input name="idanimal" type="text" value="<?php echo $tieneidanimal; ?>"><br>
+            <span>Fecha:</span><input name="fecha" type="date" value="<?php echo  $alquilerfecha; ?>"><br>
+            <span>Cantidad:</span><input name="cantidad" type="text" value="<?php echo  $tienecantidad; ?>"><br>
+            <span><input id="Modificar" name="modificar" type="submit" value="Modificar"></span><br>
+            <span><input id="Volver" type="button" onclick=" location.href='/php/proyecto/adtienealquiler.php' " value="Volver" style=cursor:pointer; name="boton" />
+            </span>
+        </fieldset>
+    </form>
 </body>
 </html>

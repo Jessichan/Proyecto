@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Modificar</title>
@@ -71,14 +72,14 @@
     <form method="post">
         <fieldset>
             <legend><h3>Cliente</h3></legend>
-            <span>Id:</span><input name="id" type="text" value="<?php echo $clienteid; ?>" maxlength="25" required disabled><br>
+            <span>Id:</span><input name="id" type="text" value="<?php echo $clienteid; ?>" maxlength="25" required readonly><br>
             <span>Nombre:</span><input name="nombre" type="text" value="<?php echo $clientenombre; ?>" maxlength="25" required><br>
             <span>Apellidos:</span><input name="ape" type="text" value="<?php echo  $clienteapellido; ?>" maxlength="50" required>
             <span>Telefono:</span><input name="tfono" type="tel" value="<?php echo $clientetelefono; ?>" pattern="[0-9]{9}" required>
             <span>Email:</span><input name="email" type="email" value="<?php echo $clienteemail; ?>" maxlength="100" required>
             <span>Usuario:</span><input name="user" type="text" value="<?php echo  $clienteusuario; ?>" maxlength="15" required><br>
             <span>Tipo:</span><input name="tipo" type="text" value="<?php echo  $clientetipo; ?>" maxlength="15" required><br>
-            <span>Password:</span><input name="pass" type="password" maxlength="50" required><br>
+            <span>Password:</span><input name="pass" type="text" value="<?php echo $clientepassword; ?>" maxlength="50"><br>
             <span><input id= "Modificar" type="submit" value="Modificar"></span><br>
             <span><input id="Volver" type="button" onclick=" location.href='/php/proyecto/adcliente.php' " value="Volver" style=cursor:pointer; name="boton" />
             </span>

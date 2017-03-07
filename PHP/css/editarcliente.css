@@ -4,14 +4,14 @@ body{
 	display: flex;
 }
 
-#modificar {
+#Modificar {
 	position: relative;
 	top: 10px;
 	border-radius: 6px;
-  background: #c9f;
-  padding: 5px 15px;
-  border: none;
-  color: #666;
+  	background: #c9f;
+  	padding: 5px 15px;
+  	border: none;
+  	color: #666;
 }
 
 input[type="button"] {
@@ -19,10 +19,10 @@ input[type="button"] {
 	left: 98px;
 	top: -17px;
 	border-radius: 6px;
-  background: #c9f;
-  padding: 5px 15px;
-  border: none;
-  color: #666;
+  	background: #c9f;
+  	padding: 5px 15px;
+  	border: none;
+  	color: #666;
 }
 
 form{
@@ -40,7 +40,6 @@ fieldset{
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="password"],
 input[type="date"],
 input[type="decimal"]{
 	margin-top: 5px;

@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Modificar</title>
@@ -63,7 +64,7 @@
 
     <form method="post" enctype="multipart/form-data">
         <fieldset>
-            <legend><h3>Alquiler</h3></legend>
+            <legend><h3>Compra</h3></legend>
             <span>Idcliente:</span><input name="idcliente" type="text" value="<?php echo $compraidcliente; ?>" maxlength="11" required><br>
             <span>Idaccesorio:</span><input name="idaccesorio" type="text" value="<?php echo $compraidaccesorio; ?>" maxlength="11" required><br>
             <span>Cantidad:</span><input name="cantidad" type="text" value="<?php echo  $compracantidad; ?>" required><br>

@@ -1,17 +1,17 @@
 body{
-  background: #e4e0ea;
+ 	background: #e4e0ea;
 	width: 100%;
 	display: flex;
 }
 
-#modificar {
+#Modificar {
 	position: relative;
 	top: 10px;
 	border-radius: 6px;
-  background: #c9f;
-  padding: 5px 15px;
-  border: none;
-  color: #666;
+ 	background: #c9f;
+ 	padding: 5px 15px;
+ 	border: none;
+ 	color: #666;
 }
 
 input[type="button"] {
@@ -26,13 +26,7 @@ input[type="button"] {
 }
 
 form{
-
-}
-#formAlquiler{
-		margin: 100px 19%;
-}
-#formTiene{
-		margin: 100px -17%;
+  margin: 100px 35%;
 }
 
 fieldset{

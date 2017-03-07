@@ -77,7 +77,7 @@
             //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
                 while($obj = $result->fetch_object()) {
                     //PRINTING EACH ROW
-                    echo "<tr>";
+                        echo "<tr>";
                         echo "<td>".$obj->idaccesorio."</td>";
                         echo "<td>".$obj->nombre."</td>";
                         echo "<td>".$obj->descripcion."</td>";
