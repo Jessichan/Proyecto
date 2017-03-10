@@ -88,6 +88,7 @@ img{
 #contenido a:hover{
 	transition: 250ms;
 	background: #F6798F80;
+	/*background: rgba(255, 255, 255);*/
 }
 
 

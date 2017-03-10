@@ -22,7 +22,7 @@
           header('Location: /php/proyecto/login.php');
         }
 
-        //evita que usuario acceda a paginas de admin
+        //evita que usuario admin acceda a paginas de usuario
         if(isset($_SESSION["iduser"])){
                 if($_SESSION["tipouser"] != "User"){
                     session_destroy();

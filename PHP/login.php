@@ -14,7 +14,6 @@
         session_start();
 
         //admin vaya a admin y user a menu
-
         if(isset($_SESSION['iduser'])){
             if($_SESSION['tipouser'] == "Admin")
                 header('Location: administracion.php');
