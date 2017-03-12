@@ -90,32 +90,16 @@
                          VALUES (NULL, {$_SESSION['iduser']}, '$fecha');
                         ";
             if ($result = $connection->query($insertar)) {
-                if (!$result){
+                if ($result){
+                    $alquilerID = $connection->insert_id;
+                }else{
                     echo "Error al alquilar animal (insertar en tabla alquiler).";
                     $alquilerCorrecto = false;
                 }
             }else
                 echo "Consulta errónea";
 
-            // 2. Obtener el ID de alquiler insertado en la consulta anterior
-            $alquilerID;
-            $conseguirIDAlquiler = "SELECT AUTO_INCREMENT
-                                    FROM information_schema.tables
-                                    WHERE table_name = 'alquiler' AND
-                                    table_schema = 'animalshop';
-                                   ";
-
-            if ($result = $connection->query($conseguirIDAlquiler)){
-                if ($result)
-                    $alquilerID = $result->fetch_object()->AUTO_INCREMENT - 1;
-                else{
-                    echo "Error al obtener el ID de alquiler.";
-                    $alquilerCorrecto = false;
-                }
-            }else
-                echo "Wrong Query";
-
-            // 3. Insertar en la tabla 'tiene'
+            // 2. Insertar en la tabla 'tiene'
             $insertar2 = "INSERT INTO tiene
                           VALUES ({$_GET['id']}, $alquilerID, 1);
                          ";
@@ -137,6 +121,7 @@
         }
 
     ?>
+
 
     <input id="volver" type="button" onclick=" location.href='/php/proyecto/animales.php' " value="Volver" style=cursor:pointer; name="boton"
     />

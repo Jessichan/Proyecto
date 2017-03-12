@@ -47,44 +47,31 @@
         header('Location: login.php');
 
 
+        //Conseguir id de tabla alquiler que se autoincrementa
+        $alquilerID;
         if (isset($_POST["fecha"])){
 
-          $idcliente = $_POST['id'];
-          $fecha  = $_POST['fecha'];
+            $idcliente = $_POST['id'];
+            $fecha  = $_POST['fecha'];
 
             //Agregar datos en alquiler
             $consulta = "INSERT INTO alquiler VALUES(NULL , '$idcliente', '$fecha');";
 
-            $result = $connection->query($consulta);
-
-                if (!$result)
+            if($result = $connection->query($consulta)){
+                if($result)
+                    $alquilerID = $connection->insert_id;
+                else
+                    echo "Error al insertar a la tabla alquiler"
+            }else
                 echo "Query Error";
         }
-
-        //Conseguir id de tabla alquiler que se autoincrementa
-        $alquilerID;
-        $conseguirIDAlquiler = "SELECT AUTO_INCREMENT
-                                FROM information_schema.tables
-                                WHERE table_name = 'alquiler' AND
-                                table_schema = 'animalshop';
-                                ";
-
-        if ($result = $connection->query($conseguirIDAlquiler)){
-            if ($result)
-                $alquilerID = $result->fetch_object()->AUTO_INCREMENT - 1;
-                else{
-                    echo "Error al obtener el ID de alquiler.";
-                    $alquilerCorrecto = false;
-                }
-        }else
-            echo "Wrong Query";
 
         if (isset($_POST["idanimal"])){
 
             $idanimal   = $_POST['idanimal'];
             $cantidad   = $_POST['cantidad'];
 
-            //Agregar en la tanla tiene
+            //Agregar en la tabla tiene
             $consulta = "INSERT INTO tiene VALUES('$idanimal', '$alquilerID', '$cantidad');";
 
            $result = $connection->query($consulta);

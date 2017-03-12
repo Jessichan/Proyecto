@@ -57,7 +57,7 @@
     ?>
 
     <div id="caja">
-        <img id="logo" src="/php/proyecto/img/logo.png">
+        <img id="logo" src="img/logo.png">
         <form class='login' method="post">
             <div>
                 <label>Username</label>
@@ -70,7 +70,7 @@
             <div><center>
                 <input type="submit" value="Entrar" style=cursor:pointer;></center>
             </div><center>
-            <div>¿No tienes cuenta? <a href="/php/proyecto/sigin.php">Registrarse</a></div></center>
+            <div>¿No tienes cuenta? <a href="sigin.php">Registrarse</a></div></center>
         </form>
     </div>
 </body>
